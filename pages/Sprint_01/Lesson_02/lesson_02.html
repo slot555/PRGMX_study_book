@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_02</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson 2. CSS-intro.</h1>
+        </div>
+    </div>
+    <!-- <a class="back_btn" href="../../index.html">Вернуться на главную</a> -->
+    <div class="content">
+        <div class="inner_content">
+            <h3>CSS (немного теории)</h3>
+            <p>
+                CSS (Cascading Style Sheets) — это код, который вы используете для стилизации вашей веб-страницы.
+            </p>
+            <p>
+                Как и HTML, CSS на самом деле не является языком программирования. Это не язык разметки - это язык таблицы стилей. 
+                Это означает, что он позволяет применять стили выборочно к элементам в документах HTML.
+            </p>
+            <p>
+                Настройки стилей хранятся в файле с расширением ".css".
+            </p>
+            <p>
+                Для того чтобы подключить файл CSS к Вашему CSS файлу необходимо в шапку сайта (между тегами 
+                <span class="code">&lt;head&gt; &lt;/head&gt;</span>) 
+                вставить следующий тег:
+                <span class="code"> &lt;link href="styles/style.css" rel="stylesheet" type="text/css"&gt;</span>
+                <br>
+                Где значение атрибута <span class="code">href</span> указывает на местоположение файла и его имя.
+            </p>
+            <p>
+                Рассмотрим структуру CSS правила подробнее:
+            </p>
+            <img src="img/css-declaration-small.png" width="400px">
+            <p>
+                <h4>Селектор (Selector)</h4>
+                Имя HTML-элемента в начале набора правил. Он выбирает элемент(ы) для применения стиля (в данном случае, элементы p ). 
+                Для стилизации другого элемента, просто измените селектор.
+                <h4>Объявление (Declaration)</h4>
+                Единственное правило, например color: red; указывает, какие из свойств элемента вы хотите стилизовать.
+                <h4>Свойства (Properties)</h4>
+                Способы, которыми вы можете стилизовать определённый HTML-элемент (в данном случае, color является свойством для элементов 
+                <span class="code">&lt;p&gt;</span>). В CSS вы выбираете, какие свойства вы хотите затронуть в вашем правиле.
+                <h4>Значение свойства (Property value)</h4>
+                Справа от свойства, после двоеточия, у нас есть значение свойства, которое выбирает одно из множества возможных признаков 
+                для данного свойства (существует множество значений color, помимо red).
+            </p>
+            <h3>Способы задания цвета</h3>
+            <p>
+                Достаточно подробно описано <a href="https://brainoteka.com/blogs/css-spravochnik/zadanie-cveta-v-css3" target="_blank">ТУТ</a> 
+            </p>
+            <h3>Учим первые CSS свойства</h3>
+            <ul>
+                <li><span class="code">color</span> - цвет текста</li>
+                <li><span class="code">background-color</span> - цвет фона</li>
+                <li><span class="code">font-size</span> - размер шрифта</li>
+                <li><span class="code">font-family</span> - выбрать шрифт</li>
+                <li><span class="code">width</span> - ширина</li>
+                <li><span class="code">height</span> - высота</li>
+                <li><span class="code">text-align</span> - выравнивание текста</li>
+                <li><span class="code">list-style</span> - изменение типа маркера для маркированного списка <span class="code">&lt;ul&gt;</span></li>
+            </ul>
+            <h3>Пример (попробуйте набрать его сами)</h3>
+            <p><span class="code">HTML</span></p>
+            <img src="img/code_html.jpg" width="1200px">
+            <p><span class="code">CSS</span></p>
+            <img src="img/code_css.jpg" width="1200px">
+            <p><span class="code">Browser result</span></p>
+            <img src="img/code_rezult.jpg">
+        </div>
+    </div>
+    <!-- &lt;h1&gt;Заголовок первого уровня&lt;/h1&gt;<br> -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+.transition_example{
+    width: 300px;
+    height: 100px;
+    background-color: blueviolet;
+    transition: 0.5s;
+}
+.transition_example:hover{
+    width: 500px;
+    transition: 0.5s;
+}
+
+.transform_example{
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+}
+.transform_example:hover{
+    transform: skewX(30deg);
+}
+
+.background_img_example{
+    width: 200px;
+    height: 200px;
+    background: url("../img/200x200.gif") transparent no-repeat center center  / cover;
+}
+
+.picture_tag_example{
+    width: 100%;
+    text-align: center;
+}
+.picture_tag_example img{
+    max-width: 100%;
+}
+
+.object_fit_example{
+    margin: 0;
+}
+.object_fit_example_row{
+    display: flex;
+}
+.object_fit_example_col{
+    flex: 0 1 33.333%;
+    padding: 0px 15px;
+}
+.object_fit_example_item{
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 58% 0px;
+    overflow: hidden;
+    position: relative;
+}
+.object_fit_example_item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.row_example{
+    margin: 0;
+}
+.row_example_item{
+    display: flex;
+    margin: 0 0 30px 0;
+}
+.row_example_item_img{
+    flex: 0 0 33.3%;
+    position: relative;
+    min-height: 150px;
+}
+.row_example_item_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

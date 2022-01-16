@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 12</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson_12: Forms. Beginning.</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner_content">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZYPBTvjZl7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+                В процессе навигации по сайтам пользователь, в основном, только щёлкает по ссылкам чтобы перемещаться по веб-страницам.
+            </p>
+            <p>
+                Но понятно, что пользователю иногда требуется обеспечить собственные поля ввода. Эти виды взаимодействия включают в себя:
+                <ul>
+                    <li>регистрацию и вход на сайтах;</li>
+                    <li>ввод личной информации (имя, адрес, данные кредитной карты и др.);</li>
+                    <li>фильтрацию контента (с помощью выпадающих списков, флажков и др.);</li>
+                    <li>выполнение поиска;</li>
+                    <li>загрузку файлов.</li>
+                </ul>
+                Чтобы приспособиться к этим потребностям, HTML предлагает интерактивные элементы управления формы:
+                <ul>
+                    <li>текстовые поля (для одной или нескольких строк);</li>
+                    <li>переключатели;</li>
+                    <li>флажки;</li>
+                    <li>выпадающие списки;</li>
+                    <li>виджеты для загрузки;</li>
+                    <li>кнопки отправки.</li>
+                </ul>
+                Эти элементы управления задействуют разные теги HTML, но большинство из них использует тег 
+                <span class="code">&lt;input></span>. Поскольку это самозакрывающий элемент, тип поля определяется его 
+                атрибутом <span class="code">type</span>:
+            </p>
+            <pre class="code">
+                &lt;!-- Текстовое поле -->
+                &lt;input type="text">
+                &lt;!-- Флажок -->
+                &lt;input type="checkbox">
+                &lt;!-- Переключатель -->
+                &lt;input type="radio">
+            </pre>
+            <h3>Элемент &lt;form></h3>
+            <p>
+                <span class="code">&lt;form></span> является блочным элементом, который определяет интерактивную часть веб-страницы. 
+                Как результат, все элементы управления (такие как <span class="code">&lt;input>, &lt;textarea> или &lt;button></span>) 
+                должны находиться внутри элемента <span class="code">&lt;form></span>.
+            </p>
+            <p>
+                Для тега<span class="code">&lt;form></span>необходимы два HTML атрибута:
+                <ul>
+                    <li>
+                        <span class="code">action</span> содержит адрес, который определяет, куда будет отправлена информация формы;
+                    </li>
+                    <li>
+                        <span class="code">method</span> может быть либо <b>GET</b>, либо <b>POST</b> и определяет, как будет 
+                        отправлена информация формы.
+                    </li>
+                </ul>
+                Как правило, информация формы посылается на сервер. Как эти данные затем будут обработаны выходит за рамки 
+                данного руководства.
+                <br>
+                Подумайте о форме как о наборе элементов управления, которые работают вместе, чтобы выполнить одну операцию. 
+                Если вы написали форму входа на сайт, у вас могло быть три поля:
+                <ul>
+                    <li>поле для электронной почты <span class="code">&lt;input type="email"></span></li>
+                    <li>поле для пароля <span class="code">&lt;input type="password"></span></li>
+                    <li>кнопка отправки <span class="code">&lt;input type="submit"></span></li>
+                </ul>
+                Эти три элемента HTML будут заключены внутри одной формы <span class="code">&lt;form action="/login" method="POST"></span>.
+                <br>
+                Вы можете аналогично добавить форму регистрации на той же HTML-странице, в отдельном элементе 
+                <span class="code">&lt;form></span>.
+            </p>
+            <h3>Текстовые поля</h3>
+            <p>
+                Почти всем формам требуется текстовый ввод от пользователей, чтобы ввести своё имя, адрес электронной почты, 
+                пароль, адрес и др. Текстовые поля формы приходят в разных вариантах.
+            </p>
+            <table>
+                <tr>
+                    <td>Текст</td>
+                    <td>&lt;input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>Допускает любой тип символов</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>&lt;input type="email"></td>
+                    <td><input type="email"></td>
+                    <td>Может показывать предупреждение, если введён неверный email</td>
+                </tr>
+                <tr>
+                    <td>Пароль</td>
+                    <td>&lt;input type="password"></td>
+                    <td><input type="password"></td>
+                    <td>Символы показываются как точки</td>
+                </tr>
+                <tr>
+                    <td>Число</td>
+                    <td>&lt;input type="number"></td>
+                    <td><input type="number"></td>
+                    <td>Могут быть использованы клавиши вверх/вниз</td>
+                </tr>
+                <tr>
+                    <td>Телефон</td>
+                    <td>&lt;input type="tel"></td>
+                    <td><input type="tel"></td>
+                    <td>Может сработать автозаполнение</td>
+                </tr>
+                <tr>
+                    <td>Многострочный текст</td>
+                    <td>&lt;textarea>&lt;/textarea></td>
+                    <td><textarea></textarea></td>
+                    <td>Может быть изменён размер поля</td>
+                </tr>
+            </table>
+            <p>
+                Хотя эти поля очень похожи и позволяют пользователям вводить текст любого рода (даже неправильный), их тип 
+                обеспечивает специфическую семантику для ввода, определяя, какую информацию поле должно содержать.
+                <br>
+                Браузеры могут впоследствии немного изменить интерфейс элемента управления, чтобы повысить интерактивность или 
+                подсказать, какое содержимое ожидается.
+                <br>
+                К примеру, поле для пароля показывает точки вместо символов. А поле для чисел позволяет увеличивать/уменьшать 
+                значение с помощью клавиш вверх и вниз.
+            </p>
+            <h3>placeholder</h3>
+            <p>
+                Текстовые поля могут отображать <b>подсказывающий</b> текст, который исчезнет, как только будет введён некоторый текст.
+                <br>
+                Если вы начинаете набирать что-то, то увидите как текст «Введите своё имя» исчезнет.
+            </p>
+            <pre class="code">
+                &lt;input type="text" placeholder="Введите своё имя">
+            </pre>
+            <h3>&lt;label></h3>
+            <p>Так как элементы формы сами по себе не очень описательны, им, как правило, предшествует текстовая <b>метка.</b></p>
+            <pre class="code">
+                &lt;label>Email&lt;/label>
+                &lt;input type="email">
+            </pre>
+            <p>
+                В то время как <span class="code">placeholder</span> уже обеспечивает некоторую подсказку о том, какое ожидается 
+                содержание, метки имеют преимущество оставаясь видимыми в любое время и могут использоваться наряду с другими типами 
+                элементов формы, таких как флажки или переключатели.
+                <br>
+                Хотя вы можете применять короткие абзацы для описания элементов формы, использование <span class="code">&lt;label></span> 
+                является семантически более правильным, потому что они существуют только в формах. <span class="code">&lt;label></span> 
+                также может быть связан с определённым элементом формы с помощью атрибута <span class="code">for</span>, 
+                соответствующему значению <span class="code">id</span> у поля.
+                <br>
+                При щелчке по метке фокус переходит к текстовому полю и помещает курсор внутрь него. Пока эта связка кажется 
+                бесполезной, но пригодится с флажками и переключателями.
+            </p>
+            <pre class="code">
+                &lt;label for="first_name">Имя&lt;/label>
+                &lt;input id="first_name" type="text">
+
+                <label for="first_name">Имя</label><input id="first_name" type="text">
+            </pre>
+            <h3>Флажки</h3>
+            <p>
+                <b>Флажки</b> — это элементы формы, которые имеют только два состояния: включено или выключено. 
+                Они в основном позволяют пользователю сказать: «Да» или «Нет» для чего-то.
+            </p>
+            <pre class="code">
+                &lt;input type="checkbox"> Запомнить меня
+
+                <input type="checkbox"> Запомнить меня
+            </pre>
+            <p>
+                Поскольку может оказаться сложно щёлкнуть по небольшому флажку, рекомендуется поместить флажок и его описание внутрь 
+                <span class="code">&lt;label></span>.
+            </p>
+            <pre class="code">
+                &lt;label>
+                    &lt;input type="checkbox"> Я согласен с условиями
+                &lt;/label>
+
+                <label>
+                    <input type="checkbox"> Я согласен с условиями
+                </label>
+            </pre>
+            <p>
+                Вы можете щёлкнуть по тексту «Я согласен с условиями» чтобы переключить флажок.
+                <br>
+                По умолчанию флажок выключен. Вы можете пометить его включенным, просто используя атрибут 
+                <span class="code">checked.</span>
+            </p>
+            <pre class="code">
+                &lt;label>
+                    &lt;input type="checkbox" checked> Использовать мой платёжный адрес
+                &lt;/label>
+                
+                <label>
+                    <input type="checkbox" checked> Использовать мой платёжный адрес
+                </label>
+            </pre>
+            <h3>Переключатели</h3>
+            <p>
+                Вы можете предоставить пользователю <b>список вариантов</b> на выбор с помощью переключателей.
+                <br>
+                Для работы этого элемента формы, ваш HTML-код должен <b>сгруппировать</b> список переключателей вместе. 
+                Это достигается с помощью одного и того же значения для атрибута <span class="code">name:</span>
+            </p>
+            <pre class="code">
+                &lt;label>Семейное положение&lt;/label>
+                &lt;label>
+                    &lt;input type="radio" name="status">Холост
+                &lt;/label>
+                &lt;label>
+                    &lt;input type="radio" name="status">Женат
+                &lt;/label>
+                &lt;label>
+                    &lt;input type="radio" name="status">Разведён
+                &lt;/label>
+                &lt;label>
+                    &lt;input type="radio" name="status">Вдовец
+                &lt;/label>
+
+                <label>Семейное положение</label>
+                <label><input type="radio" name="status">Холост</label>
+                <label><input type="radio" name="status">Женат</label>
+                <label><input type="radio" name="status">Разведён</label>
+                <label><input type="radio" name="status">Вдовец</label>
+            </pre>
+            <p>
+                Поскольку все переключатели используют одинаковое значение атрибута name (в данном случае значение status), 
+                выбор одного из вариантов отменит все остальные. Переключатели являются <b>взаимоисключающими.</b>
+            </p>
+            <h3>Разница между переключателями и флажками</h3>
+            <p>
+                Хотя флажок существует <b>сам по себе</b>, переключатели могут появляться только в виде <b>списка</b> 
+                (что означает, по меньшей мере два варианта).
+                <br>
+                Кроме того, щелчок по флажку является <b>произвольным</b>, в то время как выбор одного из переключателей 
+                является <b>обязательным</b>. Вот почему невозможно выключить переключатель, если выбрать ближайший вариант. 
+                В конце концов, всегда выбирается один из переключателей.
+            </p>
+            <h3>Выпадающие меню</h3>
+            <p>
+                Если количество вариантов для выбора занимает слишком много места, вы можете воспользоваться выпадающими меню 
+                <span class="code">&lt;select>.</span>
+                <br>
+                Они работают подобно переключателям, отличается только компоновка.
+            </p>
+            <pre class="code">
+                &lt;select>
+                    &lt;option>Январь&lt;/option>
+                    &lt;option>Февраль&lt;/option>
+                    &lt;option>Март&lt;/option>
+                    &lt;option>Апрель&lt;/option>
+                    &lt;option>Май&lt;/option>
+                    &lt;option>Июнь&lt;/option>
+                    &lt;option>Июль&lt;/option>
+                    &lt;option>Август&lt;/option>
+                    &lt;option>Сентябрь&lt;/option>
+                    &lt;option>Октябрь&lt;/option>
+                    &lt;option>Ноябрь&lt;/option>
+                    &lt;option>Декабрь&lt;/option>
+                &lt;/select>
+
+                <select>
+                    <option>Январь</option>
+                    <option>Февраль</option>
+                    <option>Март</option>
+                    <option>Апрель</option>
+                    <option>Май</option>
+                    <option>Июнь</option>
+                    <option>Июль</option>
+                    <option>Август</option>
+                    <option>Сентябрь</option>
+                    <option>Октябрь</option>
+                    <option>Ноябрь</option>
+                    <option>Декабрь</option>
+                </select>
+            </pre>
+            <h3>Множественный выбор из выпадающего меню</h3>
+            <p>
+                Если добавить атрибут <span class="code">multiple</span>, вы можете предоставить возможность выбрать несколько вариантов.
+            </p>
+            <pre class="code">
+                &lt;label>Какими браузерами вы пользуетесь?&lt;/label>
+                &lt;select multiple>
+                    &lt;option>Google Chrome&lt;/option>
+                    &lt;option>Internet Explorer&lt;/option>
+                    &lt;option>Mozilla Firefox&lt;/option>
+                    &lt;option>Opera&lt;/option>
+                    &lt;option>Safari&lt;/option>
+                &lt;/select>
+
+                <label>Какими браузерами вы пользуетесь?</label>
+                <select multiple>
+                    <option>Google Chrome</option>
+                    <option>Internet Explorer</option>
+                    <option>Mozilla Firefox</option>
+                    <option>Opera</option>
+                    <option>Safari</option>
+                </select>
+            </pre>
+            <p>
+                Выберите несколько вариантов посредством удержания <span class="code">Ctrl</span> (или <span class="code">Shift</span>) 
+                и щелчка. Это может быть хорошей альтернативой применению несколько флажков в строке.
+            </p>
+            <h3>Пример: полная форма регистрации</h3>
+            <pre class="code">
+                &lt;form action="/signup" method="POST">
+                    &lt;p>
+                        &lt;label>Обращение&lt;/label>
+                        &lt;label>
+                            &lt;input type="radio" name="title" value="mr">
+                            Г-н
+                        &lt;/label>
+                        &lt;label>
+                            &lt;input type="radio" name="title" value="mrs">
+                            Г-жа
+                        &lt;/label>
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Имя&lt;/label>
+                        &lt;input type="text" name="first_name">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Фамилия&lt;/label>
+                        &lt;input type="text" name="last_name">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Email&lt;/label>
+                        &lt;input type="email" name="email">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Телефон&lt;/label>
+                        &lt;input type="tel" name="phone">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Пароль&lt;/label>
+                        &lt;input type="password" name="password">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Подтвердите пароль&lt;/label>
+                        &lt;input type="password" name="password_confirm">
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>Страна&lt;/label>
+                        &lt;select name="country">
+                            &lt;option>Канада&lt;/option>
+                            &lt;option>Франция&lt;/option>
+                            &lt;option>Германия&lt;/option>
+                            &lt;option>Италия&lt;/option>
+                            &lt;option>Япония&lt;/option>
+                            &lt;option>Россия&lt;/option>
+                            &lt;option>Великобритания&lt;/option>
+                            &lt;option>США&lt;/option>
+                        &lt;/select>
+                    &lt;/p>
+                    &lt;p>
+                        &lt;label>
+                            &lt;input type="checkbox" name="terms">
+                            Я согласен с &lt;a href="/terms">условиями использования&lt;/a>
+                        &lt;/label>
+                    &lt;/p>
+                    &lt;p>
+                        &lt;button>
+                            Зарегистрироваться
+                        &lt;/button>
+                    &lt;/p>
+                &lt;/form>
+
+                <form action="/signup" method="POST">
+                    <p>
+                        <label>Обращение</label>
+                        <label><input type="radio" name="title" value="mr">Г-н</label>
+                        <label><input type="radio" name="title" value="mrs">Г-жа</label>
+                    
+                        <label>Имя</label> <input type="text" name="first_name">
+                    
+                        <label>Фамилия</label> <input type="text" name="last_name">
+                    
+                        <label>Email</label> <input type="email" name="email">
+
+                        <label>Телефон</label> <input type="tel" name="phone">
+                    
+                        <label>Пароль</label> <input type="password" name="password">
+                    
+                        <label>Подтвердите пароль</label> <input type="password" name="password_confirm">
+    
+                        <label>Страна</label> <select name="country">
+                            <option>Канада</option>
+                            <option>Франция</option>
+                            <option>Германия</option>
+                            <option>Италия</option>
+                            <option>Япония</option>
+                            <option>Россия</option>
+                            <option>Великобритания</option>
+                            <option>США</option>
+                        </select>
+
+                      <label><input type="checkbox" name="terms"> Я согласен с <a href="/terms">условиями использования</a></label>
+
+                      <button>Зарегистрироваться</button>
+                    </p>
+                </form>
+            </pre>
+            <p>
+                Также доступны и другие элементы форм, но мы рассмотрели наиболее используемые.
+            </p>
+        </div>
+    </div>
+</body>

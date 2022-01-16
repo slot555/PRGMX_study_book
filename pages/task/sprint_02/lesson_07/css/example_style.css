@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(245, 246, 246);
+    color: rgb(19, 18, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+h2{
+    font-size: 36px;
+    color: #FFF;
+}
+h3{
+    font-size: 36px;
+    color: #FFF;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.header_inner{
+    width: 100%;
+    height: 150px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_inner{
+    width: 100%;
+    display: flex;
+}
+.side_left{
+    width: 30%;
+    height: 670px;
+    padding: 20px 40px;
+    background-color: #FF0;
+    display: flex;
+    justify-content: left;
+}
+.side_left_menu{
+    list-style-type: none;
+}
+.side_left_menu > li{
+    font-size: 24px;
+    padding: 10px;
+}
+.side_left_menu > li:hover{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+.side_right{
+    width: 70%;
+    height: 670px;
+    padding: 25px;
+    background-color: rgb(87, 87, 56);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.article_img{
+    width: 100%;
+    height: 400px;
+}
+.article_img > img{
+    height: 400px;
+}
+.article_bottom{
+    width: 100%;
+    height: 250px;
+}
+.article_bottom_imgs{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article_bottom_imgs_item{
+    width: 25%;
+    height: 150px;
+    background-color: #000;
+}
+.article_bottom_imgs_item:hover{
+    width: 27%;
+    height: 170px;
+    background-color: rgb(133, 10, 133);
+}
+.footer_inner{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

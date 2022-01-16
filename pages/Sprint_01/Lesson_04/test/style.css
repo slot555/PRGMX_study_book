@@ -1,0 +1,12 @@
+.important { color: red; }
+.help { color: green; }
+
+div{
+    width: 100px;
+    height: 70px;
+    background-color: blueviolet;
+    border: 1px solid black;
+}
+#unique_div{
+    background-color: brown;
+}

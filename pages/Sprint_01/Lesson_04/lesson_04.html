@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_04</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson 4. CSS selectors. Advanced tables.</h1>
+        </div>
+    </div>
+    <!-- <a class="back_btn" href="../../index.html">Вернуться на главную</a> -->
+    <div class="content">
+        <div class="inner_content">
+            <h3>CSS Class</h3>
+            <p>
+                Класс — это всего лишь один из атрибутов HTML-тегов, например:<br>
+                <span class="code">&lt;p class="important"&gt;Some important text&lt;/p&gt;</span> - параграф с важным текстом<br>
+                <span class="code">&lt;p class="help"&gt;Some help text&lt;/p&gt;</span> - параграф с вспомогательным текстом
+            </p>
+            <p>
+                В CSS можно задавать стили только для элементов с определённым классом. Для этого используется селектор 
+                по классу, который пишется так .имя-класса, например:<br>
+                <span class="code">.important { color: red; }</span> — выберет все теги с классом "important"<br>
+                <span class="code">.help { color: green; }</span>    — выберет все теги с классом "help"
+            </p>
+            <img src="img/lesson_code_01_resut.jpg" width="1200px">
+            <h3>CSS Id</h3>
+            <p>
+                Каждый НТМL-элемент может иметь атрибут id. Он предназначен для идентификации какого-либо конкретного тега.
+                В пределах всей HTML-страницы должен существовать только один тег с определенным значением атрибута id.
+                Наличие нескольких элементов с одинаковым значением id не допускается и может привести к ошибке.
+                Значение атрибута id может состоять из букв латинского алфавита, цифр, знака подчеркивания и дефиса.
+                Причем значение атрибута может начинаться с латинской буквы или со знака подчеркивания (но не с цифры или другого символа).
+                Кроме того, значения атрибута id чувствительны к регистру. Атрибут id называют глобальным, поскольку он может быть использован с любыми НТМL-элементами.
+                В CSS id-селектор содержит символ (#), непосредственно за которым следует значение атрибута id. Например, следующий 
+                id-селектор сопоставляется элементу
+            </p>
+            <p>
+                Создадим пять одинаковых <span class="code">div</span>, но один ид них уникальный<br>
+                <img src="img/lesson_code_02_html.jpg" width="1200px">
+            </p>
+            <p>
+                Опишем для них <span class="code">CSS</span><br>
+                <img src="img/lesson_code_02_css.jpg" width="1200px">
+            </p>
+            <p>
+                В результате наш уникальны <span class="code">div</span> становится другим<br>
+                <img src="img/lesson_code_02_result.jpg">
+            </p>
+            <h3>Поиграем в CSS</h3>
+            <p>
+                Немного поиграем в CSS (первые 10 уровней, ну или больше по желанию)<br>
+                <a href="https://flukeout.github.io/" target="_blank">https://flukeout.github.io/</a>
+            </p>
+            <h3>Новый CSS</h3>
+            <p>
+                <span class="code">box-shadow</span><br>
+                <a href="http://htmlbook.ru/css/box-shadow" target="_blank">Тут почитать</a><br>
+                <a href="https://html-css-js.com/css/generator/box-shadow/" target="_blank">Тут генератор тени с кучей настроек</a>
+            </p>
+            <p>
+                <span class="code">margin</span><br>
+                <a href="http://htmlbook.ru/css/margin" target="_blank">Тут почитать</a>
+            </p>
+            <p>
+                <span class="code">padding</span><br>
+                <a href="http://htmlbook.ru/css/padding" target="_blank">Тут почитать</a>
+            </p>
+            <h3>Пример кода</h3>
+            <p><span class="code">HTML</span></p>
+            <img src="img/lesson_code_03_html.jpg" width="1200px">
+            <p><span class="code">CSS</span></p>
+            <img src="img/lesson_code_03_css.jpg" width="1200px">
+            <p><span class="code">Browser result</span></p>
+            <img src="img/lesson_code_03_result.jpg">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+pre{
+    background-color: rgb(178, 215, 216);
+}
+.example_01{
+    color: black;
+}
+.example_01:hover{
+    color: red;
+}
+.example_02:active{
+    color: green;
+}
+
+.example_03:focus{
+    background-color: red;
+}
+
+.example_04{
+    color: black;
+}
+.example_04 li:first-child{
+    color: red;
+}
+.example_04 li:last-child{
+    color: green;
+}
+
+.example_05 :first-of-type{
+    background-color: lime;
+}
+.example_05 :last-of-type{
+    color: red;
+}
+
+.example_06:nth-child(3){
+    background-color: lime;
+}
+
+.example_07:nth-child(odd) {
+    background-color: lime;
+}
+.example_07:nth-child(even) {
+    background-color: red;
+}
+
+.example_08 :not(.not-color){
+    color: red;
+}
+
+.example_09::before{
+    content: "\2661\2661\2661\2661";
+}
+.example_09::after{
+    content: "\2661\2661\2661\2661";
+}

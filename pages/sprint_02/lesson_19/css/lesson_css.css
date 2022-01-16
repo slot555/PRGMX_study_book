@@ -1,0 +1,56 @@
+pre{
+    background-color: rgb(178, 215, 216);
+}
+
+.example_menu a{
+    text-decoration: none;
+}
+.example_menu{
+    background: darkorange;
+    list-style: none;
+    font-family: monospace;
+    margin: 0;
+    padding-left: 0;
+}   
+.example_menu li{
+    color: #fff;
+    background: darkorange;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+.example_menu li a{
+    color: #fff;
+}
+.example_menu li:hover {
+    background: red;
+    cursor: pointer;
+}
+
+.dropdown{
+    background: orange;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+
+.example_menu li:hover > ul,
+.dropdown:hover{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.dropdown li{
+    clear: both;
+    width: 100%;
+}
+

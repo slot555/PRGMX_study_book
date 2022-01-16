@@ -1,0 +1,360 @@
+body{
+	font-family: Gilroy-Bold;
+	color: #828282;
+}
+a{
+	text-decoration: none;
+	color: #828282;
+}
+a:hover{
+	color: #000000;
+}
+a.active{
+	color: #070707;
+}
+
+/*DEFAULT FONT SIZE AND COLOR*/
+.font_size_18_22{
+	font-size: 1.25vw; /*18px*/
+	line-height: 1.52vw; /*22px*/
+}
+.font_size_34_42{
+	font-size: 2.35vw; /*34px*/
+	line-height: 2.9vw; /*42px*/
+}
+.font_color_black{
+	color: #070707;
+}
+.font_color_light_gray{
+	color: #E5E5E5;
+}
+@media screen and (max-width: 768px){
+	.font_size_18_22{
+		font-size: 4.8vw; /*18px*/
+		line-height: 5.87vw; /*22px*/
+	}
+	.font_size_34_42{
+		font-size: 9.07vw; /*34px*/
+		line-height: 11.2vw; /*42px*/
+	}
+}
+
+/*FULL SCREEN MENU*/
+nav.full_screen_menu{
+	width: 65vw;
+	height: 5.32vw;
+	border-bottom: 1px solid #828282;
+	margin: 0 auto;
+}
+nav ul{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*margin-top: 1.52vw;*/
+    padding: 0;
+    margin: 0;
+}
+nav ul li{
+	margin-top: 1.52vw;
+	display: inline;
+}
+nav ul li:hover{
+	color: #070707;
+}
+@media screen and (max-width: 768px){
+	nav.full_screen_menu{
+		display: none;
+  	}
+}
+
+/*MOBILE MENU*/
+nav.mobile_menu{
+	display: none;
+}
+@media screen and (max-width: 768px){
+	nav.mobile_menu{
+		display: block;
+	}
+	nav ul{
+		height: 60vh;
+	    flex-direction: column;
+	    justify-content: space-between;
+	    margin: 17.6vw 0 0 6.93vw;
+	}
+	nav ul li{
+		display: inline;
+	}
+	.mobile_menu_ico{
+		width: 8.8vw;
+		height: 5.07vw;
+		position: absolute;
+		top: 8vw;
+		right: 8vw;
+		cursor: pointer;
+	}
+	.mobile_menu_content{
+		display: none;
+		width: 98vw;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		background-color: #FFFFFF;
+	}
+	.mobile_menu_close{
+		width: 6vw;
+		height: 6vw;
+		position: absolute;
+		top: 17.6vw;
+		right: 8vw;
+		cursor: pointer;
+	}
+	.mobile_lang{
+		height: 9.5vw;
+		position: absolute;
+		right: 0vw;
+		bottom: 30vw;
+		text-transform: uppercase;
+		transform: rotate(90deg);
+
+	}
+}
+
+/*HOME BLOCK*/
+.home_block{
+	width: 100%;
+	height: 46.85vw;
+	text-align: center;
+}
+.home_block_content{
+	width: 65vw;
+	height: 13.02vw;
+	margin: 0 auto;
+	display: flex;
+    justify-content: space-between;
+}
+.home_block_content_name{
+	margin-top: 2.79vw;
+	font-size: 3.27vw;
+	line-height: 4.08vw;
+}
+.home_block_content_about{
+	margin-top: 6.53vw;
+}
+.full_screen_lang{
+	margin-top: 4.7vw;
+	height: 1.5vw;
+	text-transform: uppercase;
+	transform: rotate(-90deg);
+	font-size: 1.1vw;
+	line-height: 1.35vw;
+}
+.home_block_img{
+	width: 65vw;
+	height: 26.64vw;
+	margin: auto;
+	background-image: url(img/main_img_full.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@media screen and (max-width: 768px){
+	.home_block{
+		height: 215.5vw;
+	}
+	.home_block_content{
+		width: 84.27vw;
+		height: 62.93vw;
+		flex-direction: column;
+		justify-content: normal;
+		text-align: left;
+	}
+	.home_block_content_name{
+		margin-top: 6.93vw;
+		font-size: 12.5vw;
+		line-height: 15.47vw;
+	}
+	.home_block_content_about{
+		margin-top: 6.13vw;
+	}
+	.full_screen_lang{
+		display: none;
+	}
+	.home_block_img{
+		width: 84.27vw;
+		height: 127.46vw;
+		background-image: url(img/main_img_mobile.jpg);
+	}
+}
+
+/*ABOUT BLOCK*/
+.about_block{
+	width: 100%;
+	height: 34.86vw;
+	text-align: center;
+	background: #F6F6F6;
+}
+.about_block_title{
+	padding-top: 8.28vw;
+}
+.about_block_content{
+	margin: 1.22vw auto 0 auto;
+	height: 15.02vw;
+	width: 33.56vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+@media screen and (max-width: 768px){
+	.about_block{
+		height: 130.93vw;
+	}
+	.about_block_title{
+		padding-top: 21.6vw;
+	}
+	.about_block_content{
+		margin: 8vw auto 0 auto;
+		width: 84.26vw;
+		height: 69.6vw;
+	}	
+}
+
+/*SKILLS & CONTACTS BLOCK*/
+.skills_contacts_block{
+	width: 100%;
+	text-align: center;
+}
+.s_c_title1{
+	padding-top: 6.25vw;
+}
+.s_c_text1{
+	padding-top: 4.78vw;
+}
+.s_c_title2{
+	padding-top: 4.78vw;
+}
+.s_c_text2{
+	padding-top: 1.38vw;
+}
+@media screen and (max-width: 768px){
+	.s_c_title1{
+		padding-top: 22.13vw;
+	}
+	.s_c_text1{
+		padding-top: 13.33vw;
+	}
+	.s_c_title2{
+		padding-top: 13.33vw;
+	}
+	.s_c_text2{
+		padding-top: 7.2vw;
+	}
+}
+.skills_apps{
+	width: 65vw;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding-top: 5.66vw;
+}
+.skills_app{
+	height: 14.21vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.skill_img img{
+	width: 6.16vw;
+	height: 6.09vw;
+}
+.skill_name{
+	font-size: 0.97vw;
+	line-height: 1.18vw;
+}
+.skill_star{
+	font-size: 1.8vw;
+}
+@media screen and (max-width: 768px){
+	.skills_apps{
+		flex-direction: column;
+		padding-top: 0;
+	}
+	.skills_app{
+		padding-top: 21.33vw;
+		height: 54.93vw;
+	}
+	.skill_img img{
+		width: 23.75vw;
+		height: 23.8vw;
+	}
+	.skill_name{
+		font-size: 3.73vw;
+		line-height: 4.53vw;
+	}
+	.skill_star{
+		font-size: 6.93vw;
+	}
+}
+
+.contact_button{
+	display: block;
+	width: 12.49vw;
+	height: 2.89vw;
+	background-color: #070707;
+	color: #FFFFFF;
+	border-radius: 1.45vw;
+	margin: 4.36vw auto 0 auto;
+	transition: 0.3s;
+}
+.contact_button:hover{
+	color: #FFFFFF;
+	margin-top: 4.4vw;
+	box-shadow: 2px 2px 2px #828282; 
+	transition: 0.3s;
+}
+.contact_button span{
+	display: block;
+	padding: 0.7vw;
+}
+.contact_social{
+	margin: 3.67vw auto 0 auto;
+	width: 23.67vw;
+	display: flex;
+	justify-content: space-between;
+}
+.contact_social img{
+	width: 2.77vw;
+	height: 2.77vw;
+}
+.contact_social_text{
+	margin: 2.98vw auto 6.37vw auto;
+	font-size: 0.97vw;
+	line-height: 1.18vw;
+}
+@media screen and (max-width: 768px){
+	.contact_button{
+		width: 84.27vw;
+		height: 11.2vw;
+		border-radius: 5.6vw;
+		margin-top: 10.67vw;
+	}
+	.contact_button:hover{
+		margin-top: 10.7vw;
+	}
+	.contact_button span{
+		padding: 3vw;
+	}
+	.contact_social{
+		margin-top: 12.8vw;
+		width: 84vw;
+	}
+	.contact_social img{
+		width: 10.67vw;
+		height: 10.67vw;
+	}
+	.contact_social_text{
+		margin: 12.8vw auto 11.5vw auto;
+		font-size: 4.8vw; /*18px*/
+		line-height: 5.87vw; /*22px*/
+	}
+}

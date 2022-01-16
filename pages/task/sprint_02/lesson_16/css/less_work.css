@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+nav{
+    background-color: coral;
+    font-size: 24px;
+    line-height: 60px;
+}
+nav ul{
+    list-style: none;
+    position: relative;
+
+}
+nav ul li{
+    padding: 0 10px;
+    background-color: rgb(194, 77, 34);
+    display: inline-block;
+}
+nav ul li:hover > ul{
+    display: block;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+nav ul ul{
+    display: none;
+    position: absolute;
+    left: 97px;
+}
+
+nav ul ul li{
+    display: block;
+}
+
+nav li a:after{
+    content: ' +';
+}
+nav li a:only-child:after {
+    content: '';
+}

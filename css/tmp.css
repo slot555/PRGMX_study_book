@@ -1,0 +1,126 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face {
+    font-family: "Hack"; 
+    src: url("../fonts/Hack-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+.header_menu ul {
+    display: -webkit-flex; 
+    display: flex;
+    background: #dff1e9;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    font-family: 'Hack';
+    font-size: 16px;
+    font-weight: normal;
+}
+.header_menu a {
+    padding: 1em;
+    display: block;
+    color: #070707;
+    border-right: 1px solid #030303;
+    background: rgba(150, 149, 147, 0.3);
+}
+.header_menu a:hover {background: #87caa1}
+
+body{
+    background-color: rgb(245, 246, 246);
+    color: rgb(19, 18, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+.header{
+    padding: 20px;
+}    
+.header-inner{
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: rgb(35, 160, 118);
+}
+a:hover{
+    color: rgb(39, 95, 76);
+}
+.content{
+    width: 100%;
+}
+.sprint{
+    max-width: 1200px;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sprint:hover{
+    box-shadow: 4px 6px 25px #d0d0d0;
+}
+.sprint_title{
+    width: 100%;
+    margin: 0;
+}
+.sprint_lesson{
+    width: 30%;
+    background-color: white;
+    box-shadow: 4px 6px 25px #d0d0d0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sprint_lesson_head{
+    width: 100%;
+    text-align: left;
+}
+.sprint_lesson_content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    display: inline-block;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #02b3e4;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    line-height: 29px;
+}
+.btn:hover{
+    box-shadow: 2px 6px 25px #d0d0d0;
+}
+
+.content_header{
+    width: 100%;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+.content_item{
+    width: 25%;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}

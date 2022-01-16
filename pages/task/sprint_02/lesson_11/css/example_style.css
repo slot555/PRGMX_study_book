@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .box{
+    width: 200px;
+    height: 100px;
+    background-color: #ccc;
+    border: 2px solid #555;
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .box1{
+    position: static;
+  }
+  
+  .box2{
+    position: relative;
+    top: 20px;
+    left: 100px;
+  }
+  
+  .box3{
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+  
+  .box4{
+    position: fixed;
+    left: 300px;
+    top: 10px;
+  }
+  
+  .box5{
+    position: sticky;
+    left: 600px;
+    top: 10px;
+    background-color: black;
+    color: white;
+  }
+  
+  /* Japan flag */
+  
+  .flag {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid black;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: darkred;
+  }
+  
+  /* Instagram using position */
+  
+  .logo {
+              width: 400px;
+              height:  400px;
+              background:  #ac3694;
+              margin:  auto;
+              position: absolute;
+              top:  140px;
+              right:  0;
+              border-radius:  100px;
+              background-image: radial-gradient(circle at 30% 100%, #fed373 9%, #f15245 30%, #d92e7f 62%, #515ecf 85%, #9b36b7);
+            }
+            .logo .content {
+              width: 300px;
+              height:  300px;
+              background:  transparent;
+              border:  28px solid white;
+              border-radius:  100px;
+              position: absolute;
+              top:  0;
+              bottom:  0;
+              left:  0;
+              margin:  auto;
+              right:  0;
+            }
+            .logo .content .circle {
+              width: 150px;
+              height:  150px;
+              box-sizing: border-box;
+              background:  transparent;
+              border:  28px solid white;
+              border-radius:  100%;
+              position: absolute;
+              top:  0;
+              bottom:  0;
+              left:  0;
+              margin:  auto;
+              right:  0;
+            }
+            .logo .content .circle:after {
+              width: 40px;
+              height:  40px;
+              background:  white;
+              border-radius:  100%;
+              position: absolute;
+              bottom:  0;
+              left:  0;
+              margin:  auto;
+              right:  0;
+              content: '';
+              left: 106px;
+              top: -161px;
+            }
+  
+  /* Pencil css */
+  .main{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform: translate(-50%,0);
+    width: 80px;
+    height:60%;
+    background: #ab8260;
+    border-radius:8px;
+    box-shadow: 1px -35px 60px -20px #fff;
+  }
+  
+  .m1{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 20px;
+    height:100%;
+    background:#954901;
+    animation: m1Anim 5s linear  infinite;
+    border-radius: 120px 150px 0 0;
+    box-shadow: inset -5px 5px 5px 0px #8d4a00;
+  }
+  .m2{
+    position: absolute;
+    top:0;
+    left:20px;
+    width: 40px;
+    height:100%;
+    background: #d68a00;
+    animation: m2Anim 5s linear infinite;
+    border-radius: 150px 150px 0 0;
+    box-shadow: inset -5px 2px 5px 0px #eca841,
+                inset 3px 0px 5px 0px #8d4a00;
+  }
+  .m3{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 20px;
+    height:100%;
+    background: #ed9e00;
+    animation: m3Anim 5s linear infinite;
+    box-shadow: inset 5px 5px 5px 0px #f1b05f;
+    border-radius: 150px 120px 0 0;
+  }
+  .sh{
+    position: absolute;
+    top:-143px;
+    
+    right:0;
+    width: 100%;
+    height:160px;
+    
+    background-image: linear-gradient(85deg,#ab8260,#815e3e,#caa68c,#a77c60);
+    clip-path: polygon(50% 0%, 100% 91%, 100% 100%, 0 100%, 0 91%);
+    box-shadow:  inset 20px 15px 20px 10px #8d5e31;
+                  
+  }
+  .pn{
+     position: absolute;
+    top:0;
+    
+    right:0;
+    width: 100%;
+    height:50px;
+    
+    background-image: linear-gradient(82deg,#26221e,#26221e,#26221e,#26221e,#26221f,#9d9397,#26221f,#26221e,#26221e,#26221e);
+   
+  }
+  @keyframes m1Anim {
+    0%{
+       background:#a41259;
+       box-shadow: inset -2px 2px 5px 0px #ef95bd;
+    }
+    16.5%{
+       background:#a41259;
+       box-shadow: inset -2px 2px 5px 0px #ef95bd;
+    }
+   33%{
+      background:#0c3e6e;
+       box-shadow: inset -1px 2px 5px 0px  #4b95c9;
+    }
+    49.5%{
+      background:#0c3e6e;
+       box-shadow: inset -1px 2px 5px 0px  #4b95c9;
+    }
+    66%{
+      background: #007868;
+       box-shadow: inset -1px 2px 5px 0px   #089e92;
+    }
+     82.5%{
+      background:#007868;
+       box-shadow: inset -1px 2px 5px 0px    #089e92;
+    }
+    100%{
+       background:#a41259;
+       box-shadow: inset -2px 2px 5px 0px #ef95bd;
+    }
+  }
+  @keyframes m2Anim {
+    0%{
+       background: #ea4e95;
+    
+    box-shadow: inset -5px 2px 5px 0px #f38cb6,
+                inset 3px 0px 5px 0px #ef95bd;
+    }
+    16.5%{
+       background: #ea4e95;
+    
+    box-shadow: inset -5px 2px 5px 0px #f38cb6,
+                inset 3px 0px 5px 0px #ef95bd;
+    }
+    33%{
+      background:#02659a; 
+       box-shadow: inset -4px 2px 5px 0px  #4b95c9,
+                inset 1px 0px 5px 0px #4b95c9;
+    }
+    49.5%{
+      background:#02659a; 
+       box-shadow: inset -4px 2px 5px 0px  #4b95c9,
+                inset 1px 0px 5px 0px #4b95c9;
+    }
+    66%{
+     
+        
+        background:#04a294;  
+      box-shadow: inset -4px 2px 5px 0px   #2acfc1,
+                inset 1px 0px 5px 0px #2acfc1;
+    }
+    82.5%{   
+        background:#04a294;
+      box-shadow: inset -4px 2px 5px 0px   #2acfc1,
+                inset 1px 0px 5px 0px #2acfc1;
+    }
+    100%{
+       background: #ea4e95;
+  
+     box-shadow: inset -5px 2px 5px 0px #f38cb6,
+                inset 3px 0px 5px 0px #ef95bd;
+    }
+  }
+  @keyframes m3Anim {
+    0%{
+       background: #f08ab6;
+    
+    box-shadow: inset 5px 5px 5px 0px #f49ac3;
+    }
+    16.5%{
+       background: #f08ab6;
+    
+    box-shadow: inset 5px 5px 5px 0px #f49ac3;
+    }
+    33%{
+      background:#1383bb;
+        box-shadow: inset 2px 2px 5px 0px #6fb5e1;
+    }
+    49.5%{
+      background:#1383bb;
+        box-shadow: inset 2px 2px 5px 0px #6fb5e1;
+    }
+    66%{
+      background:#018e7e ;
+        box-shadow: inset 2px 2px 5px 0px #30d7c6;
+    }
+    82.5%{
+      background:#018e7e ;
+        box-shadow: inset 2px 2px 5px 0px #30d7c6;
+    }
+    100%{
+       background: #f08ab6;
+    
+    box-shadow: inset 5px 5px 5px 0px #f49ac3;
+    }
+  }

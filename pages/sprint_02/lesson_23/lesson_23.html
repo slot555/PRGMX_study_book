@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 23-27</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" href="../../../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu_bootsrap"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1 id="l23_p0">Lesson 23-27: HTML coding. Second job.</h1>
+        </div>
+    </div>
+    <a href="#l23_p0" class="move_up_arrow"></a>
+    <div class="container">
+        <div class="inner_content">
+            <h4>Содержание:</h4>
+            <ul>
+                <li><a href="#l23_p1">Вспомнить Git</a></li>
+                <ul>
+                    <li><a href="#l23_p1_1">Создание нового проекта в Git</a></li>
+                    <li><a href="#l23_p1_2">Клонирование и создание базовой структуры файлов</a></li>
+                    <li><a href="#l23_p1_3">Заливка изменений на сервер</a></li>
+                    <li><a href="#l23_p1_4">Создание веток, переход на ветку и изменение кода в ветке</a></li>
+                    <li><a href="#l23_p1_5">Объединение веток (мерж)</a></li>
+                    <li><a href="#l23_p1_6">Обновление данных с Git</a></li>
+                </ul>
+                <li><a href="#l23_p2">Планирование</a></li>
+                <li><a href="#l23_p3">Ревью кода</a></li>
+                <li><a href="#l23_p4">Пишите комментарии</a></li>
+            </ul>
+            <h3 id="l23_p1">Вспомнить Git</h3>
+            <p>
+                Так-как у вас командный проект настоятельно рекомендую реализовывать его в системе контроля версий Git. Для этого давайте вспомним как работать с Git.
+            </p>
+            <h3 id="l23_p1">Создание нового проекта в Git</h3>
+            <p>
+                Надеюсь с этим этапом ни у кого уже вопросов не возникнет, но освежим память.
+            </p>
+            <p>
+                Жмакаем кнопку "New"
+            </p>
+            <img src="img/l23_p1_1_img01.png" class="img-fluid rounded mx-auto d-block" alt="new">
+            <p>
+                Пишем имя проекта. Ставим галочку "Add a Readme file" и создаем.
+            </p>
+            <img src="img/l23_p1_1_img02.png" class="img-fluid rounded mx-auto d-block" alt="add readme">
+            <p>
+                Бинго, проект создан.
+            </p>
+            <img src="img/l23_p1_1_img03.png" class="img-fluid rounded mx-auto d-block" alt="done">
+            <h3 id="l23_p1_2">Клонирование и создание базовой структуры файлов</h3>
+            <p>
+                Клонируем проект себе на локальную машину командой 
+                <pre class="code">git clone repository_url</pre>
+                <span class="code">repository_url</span> берем в проекте Git.<br>
+                <img src="img/l23_p1_2_img01.png" class="img-fluid rounded mx-auto d-block" alt="repository_url">
+                У меня это выглядело так:
+                <img src="img/l23_p1_2_img02.png" class="img-fluid rounded mx-auto d-block" alt="terminal clone">
+                Далее открываем папку проекта в VS Code и создаем базовую структуру файлов и папок проекта. У меня это выглядело так:
+                <img src="img/l23_p1_2_img03.png" class="img-fluid rounded mx-auto d-block" alt="file structure">
+            </p>
+            <h3 id="l23_p1_3">Заливка изменений на сервер</h3>
+            <p>
+                Понятное дело что все изменения сделаны на локальной машине и их необходимо залить (запушить) на сервер. 
+                Это делается в несколько этапов т.к. все заливаемое на сервер должно быть маркировано определенным коммитом. <br>
+                1) Добавить изменения, которые сделали локально
+                <pre class="code">git add .</pre>
+                2) Подписать изменения и сделать коммит
+                <pre class="code">git commit -m "commit text"</pre>
+                3) Закачать (запушить) последний коммит на сервер в свою ветку (бранч)
+                <pre class="code">git push origin branch_name</pre>
+                У меня это выглядело так:
+                <img src="img/l23_p1_3_img01.png" class="img-fluid rounded mx-auto d-block" alt="git push">
+                А на сервере так:
+                <img src="img/l23_p1_3_img02.png" class="img-fluid rounded mx-auto d-block" alt="git rezult">
+            </p>
+            <h3 id="l23_p1_4">Создание веток, переход на ветку и изменение кода в ветке</h3>
+            <p>
+                Групповой проект подразумевает что каждый из участников группы будет работать в своей ветке (бранч), 
+                а тим лид будет по необхобимости объединять ветки в цельный проект (мержить).
+            </p>
+            <p>
+                Начнем с создания веток для каждого участника группы. Для создания ветки используется следующая команда:
+                <pre class="code">git checkout -b branch_name</pre>
+                Для переключения на другую ветку используется такая-же команда. Другими словами, создание и переход на ветку 
+                выполняется одной и той-же командой (кроме атрибута <span class="code">"-b"</span>), все зависит от того есть 
+                такая ветка уже или нет.
+                В моем случае это выглядит так:
+                <img src="img/l23_p1_4_img01.png" class="img-fluid rounded mx-auto d-block" alt="git checkout">
+                На самом деле все эти манипуляции нельзя запушить на сервер, т.к. в проекте не было каких либо реальных изменений. 
+                Давайте для примера выполним какие-нибудь изменения в каждой ветке.<br>
+                Для ветки <b><span class="code">main</span></b> внесем правки в файл <b><span class="code">index.html</span></b>.
+                <img src="img/l23_p1_4_img02.png" class="img-fluid rounded mx-auto d-block" alt="git branch main">
+                Для ветки <b><span class="code">developer1</span></b> внесем правки в файл <b><span class="code">contacts.html</span></b>.
+                <img src="img/l23_p1_4_img03.png" class="img-fluid rounded mx-auto d-block" alt="git branch developer1">
+                Для ветки <b><span class="code">developer2</span></b> внесем правки в файл <b><span class="code">faq.html</span></b>.
+                <img src="img/l23_p1_4_img04.png" class="img-fluid rounded mx-auto d-block" alt="git branch developer2">
+                После этого увидим что на сервере в разделе веток можно выбрать ту ветку которую хотим просмотреть.
+                <img src="img/l23_p1_4_img05.png" class="img-fluid rounded mx-auto d-block" alt="git branches">
+                На следующих трех скринах я продемонстрирую независимость кода в ветках. <br>
+                Ветка main
+                <img src="img/l23_p1_4_img06.png" class="img-fluid rounded mx-auto d-block" alt="branch main">
+                Ветка developer1
+                <img src="img/l23_p1_4_img07.png" class="img-fluid rounded mx-auto d-block" alt="branch developer1">
+                Ветка developer2
+                <img src="img/l23_p1_4_img08.png" class="img-fluid rounded mx-auto d-block" alt="branch developer2">
+            </p>
+            <h3 id="l23_p1_5">Объединение веток (мерж)</h3>
+            <p>
+                Объединение веток выполняется командой:
+                <pre class="code">git merge branch_name</pre>
+                Логика процесса объединения следующая: <br>
+                <ol>
+                    <li>переходим на ветку в которую хотим слить данные из другой ветки</li>
+                    <li>выполняем команду слияния и указываем имя ветки, которую хотим слить в базовую ветку</li>
+                </ol>
+                На скринах ниже показан последовательный процесс объединения веток и пуш результата. <br>
+                Объединение с веткой developer1
+                <img src="img/l23_p1_5_img01.png" class="img-fluid rounded mx-auto d-block" alt="git merge">
+                Объединение с веткой developer2
+                <img src="img/l23_p1_5_img02.png" class="img-fluid rounded mx-auto d-block" alt="git merge">
+                Пуш результата
+                <img src="img/l23_p1_5_img03.png" class="img-fluid rounded mx-auto d-block" alt="git merge">
+            </p>
+            <h3 id="l23_p1_6">Обновление данных с Git</h3>
+            <p>
+                Не забывайте обновлять данные на локальном компьютере с Gita командой:
+                <pre class="code">git pull</pre>
+            </p>
+            <hr>
+            <h3 id="l23_p2">Планирование</h3>
+            <p>
+                При планировании важно учесть следующие моменты:
+                <ul>
+                    <li>Работая в команде вам необходимо распределить обязанности между участниками группы.</li>
+                    <li>Для того чтобы планы не забылись можно использовать например файл Readme вашего проекта.</li>
+                    <li>Разделите обязанности так чтобы каждый участник работал со своим отдельным файлом в своей ветке, так будет 
+                        проще объединять (мержить) отделльные ветки в один проект.</li>
+                    <li>Важно определить не только обязанности, но и время на выполнение каждой части.</li>
+                    <li>Так-же будет правильным подходом назначить встречи (в онлайне) для обсуждения текущего прогресса, что-бы в 
+                        случае "запар" у одного участника команда могла вовремя подхватить и помочь.</li>
+                    <li>При встречах неплохо проводить командную "Ревью" кода (Об этом подробнее в след разделе).</li>
+                    <li>При завершении какого либо этапа разработки важно что-бы тим лид объединял все в единый проект (мержил).</li>
+                </ul>
+                Для примера заполню <b>readme</b> для верстки несуществующего проекта магазина. <br>
+                Преимущество файла readme в том что вся инфа размещается на главной странице проекта в Git
+                <img src="img/l23_p2_img01.png" class="img-fluid rounded mx-auto d-block" alt="git readme">
+                <img src="img/l23_p2_img02.png" class="img-fluid rounded mx-auto d-block" alt="git readme2">
+            </p>
+            <h3 id="l23_p3">Ревью кода</h3>
+            <p>
+                Ревью кода это Анализ кода друг друга — один из главных путей взаимодействия между разработчиками во время разработки.
+                Преимущества:
+                <ul>
+                    <li>Взаимобучение</li>
+                    <li>Простота передачи кода другому разработчику</li>
+                    <li>Помощь разработчику если вдруг произошла "запара"</li>
+                    <li>Налаживание взаимодействия между разработчиками</li>
+                </ul>
+                Недостатки:
+                <ul>
+                    <li>время, однако благодаря взаимообучению и налаженному взаимодействию, потраченное время плавно переходит в повышение 
+                        професионализма разработчиков и соответственно ускорение разработки в будущем</li>
+                </ul>
+                Больше подробностей <a href="https://habr.com/ru/company/vk/blog/318510/" target="_blanc">ТУТ</a>
+            </p>
+            <h3 id="l23_p4">Пишите комментарии</h3>
+            <p>
+                <b>ПИШИТЕ КОММЕНТАРИИ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</b>
+            </p>
+            <p>
+                Комментарии — пояснения к исходному тексту программы, находящиеся непосредственно внутри комментируемого кода. 
+                Синтаксис комментариев определяется языком программирования. С точки зрения компилятора или интерпретатора, 
+                комментарии — часть текста программы, не влияющая на её семантику. Комментарии не оказывают никакого влияния на 
+                результат компиляции программы или её интерпретацию. Помимо исходных текстов программ, комментарии также применяются в 
+                языках разметки и языках описания.
+            </p>
+            <p>
+                Другими словами комментарии это часть кода, невидимая компилятору (в нашем случае браузеру) и никак не влияющая на 
+                функционал программы. Используется для пояснения функционала другим разработчикам.
+            </p>
+            <pre class="code">
+                
+                &lt;!-- Комментарий в HTML -->
+                /* Коментарий в CSS */
+            </pre>
+            
+
+            
+
+
+
+            
+            
+        </div>
+    </div>
+    <footer style="min-height: 150px;"></footer>
+    <script src="../../../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</body>

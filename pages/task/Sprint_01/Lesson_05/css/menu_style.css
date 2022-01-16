@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+body{
+    background-color: rgb(245, 246, 246);
+    color: rgb(19, 18, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+h3{
+    color: rgb(78, 67, 67);
+}
+a{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(75, 109, 172);
+}
+.sprint_table{
+    width: 100%;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+}
+.sprint_table td{
+    width: 25%;
+}
+.lesson_table{
+    margin: 0 auto;
+    width: 90%;
+    height: 150px;
+    /* border: 1px solid black; */
+    border-radius: 10px;  
+    background-color: rgb(103, 107, 105);
+    box-shadow: 4px 6px 25px #d0d0d0;
+    text-align: center;
+    
+}
+.lesson_table h3{
+    color: white;
+}
+.lesson_table th{
+    height: 100px;
+}
+.lesson_table td{
+    height: 50px;
+    border-radius: 7px;
+    background-color: rgb(200, 241, 221);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.lesson_table td:hover{
+    background-color: rgb(182, 212, 198);
+    font-size: 22px;
+}

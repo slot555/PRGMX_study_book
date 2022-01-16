@@ -1,0 +1,9 @@
+
+.example{
+    background-color: cadetblue;
+    width: 300px;
+    height: 300px;
+    border: 15px solid blue;
+    padding: 16px;
+    margin: 25px;
+}

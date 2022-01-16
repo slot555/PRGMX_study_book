@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+body{
+    background-color: rgb(245, 246, 246);
+    color: rgb(19, 18, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+a{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(75, 109, 172);
+}
+.header{
+    width: 100%;
+    text-align: center;
+}
+.content{
+    width: 1800px;
+    margin: auto;
+}
+.sprint_content{
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 6px 25px #d0d0d0;
+}
+.sprint_header{
+    width: 100%;
+    text-align: left;
+}
+.lessons{
+    width: 100%;
+}
+.lesson_item{
+    width: 30%;
+    height: 150px;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 5px 1%;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 4px 6px 25px #d0d0d0;
+}
+.lesson_header{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.lesson_content{
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 40px;   
+    text-align: center;
+}
+.lesson_content a{
+    background-color: rgb(225, 238, 199);
+    padding: 5px 50px;
+    border-radius: 5px;
+}
+.lesson_content a:hover{
+    box-shadow: 4px 6px 25px #d0d0d0; 
+}
+                    
+            
+
+

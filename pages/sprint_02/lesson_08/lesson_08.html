@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 08</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson_08: Images. Font-Awesome.</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner_content">
+            <h3>Font-Awesome</h3>
+            <p>
+                Font Awesome — это шрифт с иконками, которые могут добавляться к любым элементам веб-страницы, чтобы повысить 
+                их наглядность и улучшить дизайн. 
+            </p>
+            <h4>Установка</h4>
+            <p>
+                Перейдите на сайт <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> и скачайте архив с последней версией 
+                (в более ранних версиях установка была значительно проще, кому интересно Гугл в помощь).
+            </p>
+            <p>
+                <a href="https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-web.zip">Прямая ссылка на скачивание</a>
+                (если версия обновилась ссылка может быть сломана).
+            </p>
+            <p>
+                Распаковываем архив в папку с проектом в котором хотим их использовать. Далее необходимо подключить 3 
+                <span class="code">javascript</span> файла в <span class="code">head</span> раздел <span class="code">html</span> файла, 
+                в котором мы им будем использовать.<br>
+                <pre class="code">
+                    &lt;script defer src="path_to_fontawesome_folder/js/brands.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="path_to_fontawesome_folder/js/solid.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="path_to_fontawesome_folder/js/fontawesome.js"&gt;&lt;/script&gt;
+                </pre>
+                У меня получилось:
+                <pre class="code">
+                    &lt;script defer src="../../../../fontawesome-free-5.15.4-web/js/brands.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="../../../../fontawesome-free-5.15.4-web/js/solid.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="../../../../fontawesome-free-5.15.4-web/js/fontawesome.js"&gt;&lt;/script&gt;
+                </pre>
+            </p>
+            <p>
+                Для использования иконок достаточно указать их тег. Например инструкцию для подключения иконки звезды можно 
+                посмотреть на <a href="https://fontawesome.com/v5.15/icons/star?style=solid" target="_block">сайте</a>. На 
+                странице вы увидите саму иконку и инструкцию к их подключению, которая выглядит так: 
+                <pre class="code">
+                    &lt;i class="fas fa-star"&gt;&lt;/i&gt;
+                </pre>
+                это и есть тот тег который будет отображать иконку звезды.
+            </p>
+            <img src="img/s02_l08_img_01.png" alt="" width="1200px">
+            <hr>
+            <h3>Transition</h3>
+            <p>
+                Transition позволяет определять переходное состояние между двумя состояниями элемента. Различные состояния могут 
+                быть определены с помощью псевдоклассов, таких как <span class="">:hover</span> или <span class="">:active</span>.
+                Длугими словами это плавный переход между крайними состояниями растянутый по времени, которое может указать программист.
+            </p>
+            <h4>Пример</h4>
+            <p>
+                <span class="code">html</span>
+                <pre class="code">
+                    &lt;div class="transition_example"&gt;
+                        &lt;p&gt;some text&lt;/p&gt;    
+                    &lt;/div&gt;
+                </pre>
+            </p>
+            <p>
+                <span class="code">css</span>
+                <pre class="code">
+                    .transition_example{
+                        width: 300px;
+                        height: 100px;
+                        background-color: blueviolet;
+                        transition: 0.5s;
+                    }
+                    .transition_example:hover{
+                        width: 500px;
+                        transition: 0.5s;
+                    }
+                </pre>
+            </p>
+            <div class="transition_example">
+                <p>some text</p>    
+            </div>
+            <hr>
+            <h3>Transform</h3>
+            <p>
+                CSS3-трансформации позволяют сдвигать, поворачивать и масштабировать элементы. Трансформации преобразовывают элемент, 
+                не затрагивая остальные элементы веб-страницы, т.е. другие элементы не сдвигаются относительно него.
+            </p>
+            <p>
+                <a href="http://htmlbook.ru/css/transform">Тут</a> подробная техническая информация.
+            </p>
+            <h4>Пример</h4>
+            <p>
+                <span class="code">html</span>
+                <pre class="code">
+                    &lt;div class="transform_example"&gt;
+                        &lt;p&gt;some text&lt;/p&gt;    
+                    &lt;/div&gt;
+                </pre>
+            </p>
+            <p>
+                <span class="code">css</span>
+                <pre class="code">
+                    .transform_example{
+                        width: 200px;
+                        height: 200px;
+                        background-color: chartreuse;
+                    }
+                    .transform_example:hover{
+                        transform: skewX(30deg);
+                    }
+                </pre>
+            </p>
+            <div class="transform_example">
+                <p>some text</p>    
+            </div>
+            <hr>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nTtuiBXKp88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Images CSS Background</h3>
+            <p>
+                Вставка картинок как задний фон через <span class="code">CSS</span>
+                <pre class="code">
+                    background: url("../img/universe.jpg") transparent no-repeat center center  / cover;
+                </pre>
+                помогает более просто настроит их адаптивность, но это плохая практика, т.к. если Ваш шаблон будет использоваться 
+                программистом для динамичного изменения контента то работать с <span class="code">CSS</span> намного сложнее чем с
+                <span class="code">HTML</span>. <br>
+                Более подробную информацию по <span class="code">background</span> можно почитать 
+                <a href="http://htmlbook.ru/css/background" target="_blank">ТУТ</a>.
+            </p>
+            <h4>Пример</h4>
+            <span class="code">html</span>
+            <pre class="code">
+                &lt;div class="background_img_example"&gt;&lt;/div&gt;
+            </pre>
+            <span class="code">css</span>
+            <pre class="code">
+                .background_img_example{
+                    width: 200px;
+                    height: 200px;
+                    background: url("../img/200x200.gif") transparent no-repeat center center  / cover;
+                }
+            </pre>
+            <div class="background_img_example"></div>
+            <hr>
+            <h3>Images (HTML Picture)</h3>
+            <p>
+                Использование тега <span class="code">picture</span> позволяет почти полностью отказаться от использования 
+                <span class="code">css</span>, и подменять изображение в зависимости от разрешения монитора, чтобы уменьшил 
+                объем загружаемого через сеть контента.
+            </p>
+            <h4>Пример</h4>
+            <span class="code">html</span>
+            <pre class="code">
+                &lt;div class="picture_tag_example"&gt;
+                    &lt;picture&gt;
+                        &lt;source srcset="img/marvel.jpg" type="image/jpeg" media="(min-width:1330px)"&gt;
+                        &lt;source srcset="img/dc.jpg" type="image/jpeg" media="(min-width:992px)"&gt;
+                        &lt;source srcset="img/starwars.png" type="image/png" media="(max-width:992px)"&gt;
+                        &lt;img src="img/marvel.jpg" alt=""&gt;
+                    &lt;/picture&gt;
+                &lt;/div&gt;
+            </pre>
+            <span class="code">css</span>
+            <pre class="code">
+                .picture_tag_example{
+                    width: 100%;
+                    text-align: center;
+                }
+                .picture_tag_example img{
+                    max-width: 100%;
+                }
+            </pre>
+            <div class="picture_tag_example">
+                <picture>
+                    <source srcset="img/marvel.jpg" type="image/jpeg" media="(min-width:1330px)">
+                    <source srcset="img/dc.jpg" type="image/jpeg" media="(min-width:992px)">
+                    <source srcset="img/starwars.png" type="image/png" media="(max-width:992px)">
+                    <img src="img/marvel.jpg" alt="">
+                </picture>
+            </div>
+            <hr>
+            <h3>Images (HTML object-fit)</h3>
+            <p>
+                Свойство <span class="code">object-fit</span> определяет, как содержимое заменяемого элемента, такого 
+                как <span class="code">&lt;img&gt;</span> или <span class="code">&lt;video&gt;</span>, должно заполнять 
+                контейнер относительно его высоты и ширины.
+            </p>
+            <p>
+                Для <span class="code">object-fit</span> можно указать одно из нижеперечисленных свойств:
+                <span class="code">fill, contain, cover, none, scale-down</span>. <br>
+                Подробнее <a href="https://developer.mozilla.org/ru/docs/Web/CSS/object-fit">ТУТ</a>
+            </p>
+            <h4>Пример</h4>
+
+            <span class="code">html</span>
+            <pre class="code">
+                &lt;div class="object_fit_example"&gt;
+                    &lt;div class="object_fit_example_row"&gt;
+                        &lt;div class="object_fit_example_col"&gt;
+                            &lt;div class="object_fit_example_item"&gt;
+                                &lt;img src="img/marvel.jpg" alt=""&gt;
+                            &lt;/div&gt;
+                        &lt;/div &gt;
+                        &lt;div class="object_fit_example_col"&gt;
+                            &lt;div class="object_fit_example_item"&gt;
+                                &lt;img src="img/dc.jpg" alt=""&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="object_fit_example_col"&gt;
+                            &lt;div class="object_fit_example_item"&gt;
+                                &lt;img src="img/starwars.png" alt=""&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </pre>
+            <span class="code">css</span>
+            <pre class="code">
+                .object_fit_example{
+                    margin: 0;
+                }
+                .object_fit_example_row{
+                    display: flex;
+                }
+                .object_fit_example_col{
+                    flex: 0 1 33.333%;
+                    padding: 0px 15px;
+                }
+                .object_fit_example_item{
+                    margin: 0px 0px 20px 0px;
+                    padding: 0px 0px 58% 0px;
+                    overflow: hidden;
+                    position: relative;
+                }
+                .object_fit_example_item img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            </pre>
+            <div class="object_fit_example">
+                <div class="object_fit_example_row">
+                    <div class="object_fit_example_col">
+                        <div class="object_fit_example_item">
+                            <img src="img/marvel.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="object_fit_example_col">
+                        <div class="object_fit_example_item">
+                            <img src="img/dc.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="object_fit_example_col">
+                        <div class="object_fit_example_item">
+                            <img src="img/starwars.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3>Images (HTML in a row)</h3>
+            <h4>Пример</h4>
+
+            <span class="code">html</span>
+            <pre class="code">
+                &lt;div class="row_example"&gt;
+
+                    &lt;div class="row_example_item"&gt;
+                        &lt;div class="row_example_item_img"&gt;
+                            &lt;img src="img/marvel.jpg" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="row_example_item_content"&gt;
+                            &lt;p&gt;
+                                text
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="row_example_item"&gt;
+                        &lt;div class="row_example_item_img"&gt;
+                            &lt;img src="img/dc.jpg" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="row_example_item_content"&gt;
+                            &lt;p&gt;
+                                text
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="row_example_item"&gt;
+                        &lt;div class="row_example_item_img"&gt;
+                            &lt;img src="img/starwars.png" alt=""&gt;
+                        &lt;/div&gt;
+                        &lt;div class="row_example_item_content"&gt;
+                            &lt;p&gt;
+                                text
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            </pre>
+            <span class="code">css</span>
+            <pre class="code">
+                .row_example{
+                    margin: 0;
+                }
+                .row_example_item{
+                    display: flex;
+                    margin: 0 0 30px 0;
+                }
+                .row_example_item_img{
+                    flex: 0 0 33.3%;
+                    position: relative;
+                    min-height: 150px;
+                }
+                .row_example_item_img img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            </pre>
+
+            
+            <div class="row_example">
+                <div class="row_example_item">
+                    <div class="row_example_item_img">
+                        <img src="img/marvel.jpg" alt="">
+                    </div>
+                    <div class="row_example_item_content">
+                        <p>
+                            text
+                        </p>
+                    </div>
+                </div>
+                <div class="row_example_item">
+                    <div class="row_example_item_img">
+                        <img src="img/dc.jpg" alt="">
+                    </div>
+                    <div class="row_example_item_content">
+                        <p>
+                            text
+                        </p>
+                    </div>
+                </div>
+                <div class="row_example_item">
+                    <div class="row_example_item_img">
+                        <img src="img/starwars.png" alt="">
+                    </div>
+                    <div class="row_example_item_content">
+                        <p>
+                            text
+                        </p>
+                    </div>
+                </div>
+            </div>
+ 
+
+
+        </div>
+    </div>
+</body>

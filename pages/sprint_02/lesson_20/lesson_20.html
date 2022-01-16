@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 20</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" href="../../../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <!-- <a href="../../../index.html"></a> -->
+    <div id="lesson_menu_bootsrap"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1 id="l20_p0">Lesson 20: Grids.</h1>
+        </div>
+    </div>
+    <a href="#l20_p0" class="move_up_arrow"></a>
+    <div class="container">
+        <div class="inner_content">
+            <h4>Содержание:</h4>
+            <ul>
+                <li><a href="#l20_p0_1">Видео инструкция по использованию</a></li>
+                <li><a href="#l20_p1">Вёрстка на Grid в CSS. Полное руководство и справочник</a></li>
+                <li><a href="#l20_p2">Введение</a></li>
+                <li><a href="#l20_p3">Как это работает?</a></li>
+                <li><a href="#l20_p4">Создаем Grid</a></li>
+                <li><a href="#l20_p5">Создаем шаблон сайта с CSS Grid</a></li>
+                <li><a href="#l20_p6">Создаем адаптивный Grid</a></li>
+                <li><a href="#l20_p7">Гриды с медиа запросами</a></li>
+                <li><a href="#l20_p8">Совмещаем grid c block</a></li>
+                <li><a href="#l20_p9">Auto-flow — строки или колонки</a></li>
+                <li><a href="#l20_p10">В конец урока</a></li>
+            </ul>
+            <h3 id="l20_p0_1">Видео инструкция по использованию</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yWVJgnTpdUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 id="l20_p1">Вёрстка на Grid в CSS. Полное руководство и справочник</h3>
+            <p>
+                Grid модуль для CSS был разработан рабочей группой CSS для того, чтобы сделать создание шаблонов в CSS максимально удобным. 
+                Он попал в рекомендации по официальному внедрению в феврале 2017 года, а основные бразуеры начали его поддержку уже в марте 
+                2017 года.
+            </p>
+            <p>
+                CSS Grid скоро станет неотъемлемой частью набора инструментов любого фронт-энд разработчика. И если вы один из них, то вам 
+                придется учить CSS Grid — который уже точно станет неоспоримым умением для любой позиции в фронтэнд разработке.
+            </p>
+            <p>
+                С этим мощным функционалом и интуитивно понятным синтаксисом, шаблоны на grid несомненно будут менять представление о 
+                создании веба как такового.
+            </p>
+            <h3 id="l20_p2">Введение</h3>
+            <p>
+                CSS Grid это новая модель для создания шаблонов, оптимизированная для создания двумерных макетов. Она идеально подходит 
+                для: шаблонов сайтов, форм, галерей и всего, что требует точного и отзывчивого позиционирования.
+            </p>
+            <p>
+                С развитием веба, в последние годы, разработка шаблонов веб-сайтов стала всё более затруднительной. В ранние годы веба, 
+                HTML таблицы зачастую использовались для многоколоночных шаблонов, форм и т.д. Но у этого метода есть свои недостатки. 
+                Это означает то, что представление шаблона, как такового должно было быть сделано на уровне разметки, таким образом 
+                стирая различие между представлением и контентом. По факту, таблицы были созданы для того, чтобы содержать табличные 
+                данные и только для этого. И уже даже не касаясь семантических проблем, табличные шаблоны совершенно не созданы для 
+                адаптивного дизайна.
+            </p>
+            <p>
+                Флоаты в конечном итоге заменили таблицы как всеобще приемлемый и рекомендованный метод создания разметки шаблона, 
+                так как он позволяет нам позиционировать элементы вне зависимости от изначальной разметки. Тем не менее, пока этот 
+                метод считался значительным улучшением на фоне табличной верстки, у него тоже были свои ограничения. Флоаты в основном 
+                были разработаны для создания шаблонов документов и они не совсем были подходящими для создания сложных шаблонов 
+                приложений, которые сейчас распространены в сети и которые мы привыкли видеть в своих браузерах. Флоат элементы сложно 
+                контролировать, особенно на девайсах и viewport'ах разных размеров. Это привело к различным гридободобным хакам, которые 
+                уже стали нормой, большинству из них требовалась дополнительная разметка, которая отвлекала от общей концепции разделения 
+                контента. Таким образом рабочая группа CSS находилась в поиске наилучшего решения для всех задач.
+            </p>
+            <p>
+                CSS Grid модель рассматривает все эти проблемы и даже более. Она позволяет нам создавать продвинутые шаблоны за малую долю 
+                времени от того, которое бы вы потратили на них с флотами и с гораздо меньшим количеством кода.
+            </p>
+            <img src="img/less20_img01.jpeg" alt="grid" class="img-fluid">
+            <p>
+                Хотя flexbox уже позволил разработчикам начать уходить от флоат элементов, но он работает только в одном измерении. 
+                Grid CSS же это делает в двух, таким образом лучше подходя для создания сложных, комплексных шаблонов.
+            </p>
+            <h3 id="l20_p3">Как это работает?</h3>
+            <p>
+                Grid шаблон работает по системе сеток. Grid это набор пересекающихся горизонтальных и вертикальных линий, которые 
+                создают размерность и позиционируют систему координат для контента в самом grid-контейнере.
+            </p>
+            <p>
+                Чтобы создать Grid разметку, вам просто нужно выставить элементу <span class="code">display: grid</span>. Этот шаг 
+                автоматически сделает всех прямых потомков этого элемента — grid элементами. После этого вы можете смело использовать 
+                разнообразные grid свойства для выравнивания размеров и позиционирования элементов должным образом. Обычно первым 
+                шагом является определение того, сколько колонок и рядов есть в гриде. Но даже это опциональный момент — 
+                как вы увидите далее.
+            </p>
+            <p>
+                Это пример грида с четырьмя рядами и тремя колонками. Он состоит из 12 grid элементов. Каждый из этих элементов 
+                отмечен зеленым и между ними есть небольшое расстояние.
+            </p>
+            <p>
+                Все эти grid элементы одного размера, но они могли бы быть совершенно любого размера, такого, какого мы захотим. 
+                Мы могли бы сделать их совершенно разными по размерам, если бы захотели. Некоторые из них могли бы охватывать несколько 
+                столбцов и рядов, другие могли бы оставаться размеров с одну ячейку. Далее в этой статье вы узнаете об этих и других 
+                функциях в grid, некоторые из которых вполне смогут вас удивить.
+            </p>
+            <h3 id="l20_p4">Создаем Grid</h3>
+            <p>
+                Пример простого 3x3 грида с небольшими отступами между элементами.
+            </p>
+            <p>
+                А вот код:
+                <pre class="code">
+
+                    -- HTML --
+                    &lt;div id="grid">
+                        &lt;div>1&lt;/div>
+                        &lt;div>2&lt;/div>
+                        &lt;div>3&lt;/div>
+                        &lt;div>4&lt;/div>
+                        &lt;div>5&lt;/div>
+                        &lt;div>6&lt;/div>
+                        &lt;div>7&lt;/div>
+                        &lt;div>8&lt;/div>
+                        &lt;div>9&lt;/div>
+                    &lt;/div>
+
+                    -- CSS --
+                    #grid { 
+                        display: grid;
+                        grid-template-rows: 1fr 1fr 1fr;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 2vw;
+                    }
+                    #grid > div {
+                        font-size: 5vw;
+                        padding: .5em;
+                        background: gold;
+                        text-align: center;
+                    }
+                </pre>
+            </p>
+            <div id="less20_examle01">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <a href="https://www.quackit.com/html/html_editors/scratchpad/?example=/css/grid/tutorial/create_a_grid" target="_blank">
+                Попробуйте поиграться с ним.</a>
+            <p>
+                Давайте внимательнее вглядимся в код. Таким образом мы видим обычный HTML, состоящий из элементов, вложенных в свой 
+                внешний элемент. Но именно для наших целей, внешний <span class="code">&lt;div></span> это контейнер гридов. Соотвественно, 
+                все элементы вложенные в него будут являться грид элементами.
+            </p>
+            <p>
+                Но по факту, это не будет полноценными гридом, пока мы не применим кое-какой CSS для него.
+            </p>
+            <h5>Вот объяснение того, что написано в этом CSS:</h5>
+            <p>
+                <ul>
+                    <li>
+                        <span class="code">display: grid</span> - Превращает элемент в grid контейнер. Это все, что нужно для того, что 
+                        создать грид.
+                        <ul>
+                            <li>
+                                можете использовать <span class="code">display: inline-grid</span>, что создать строчный грид-контейнер.
+                            </li>
+                            <li>
+                                Или же вы можете использовать <span class="code">display: subgrid</span>, чтобы создать подсетку, это значение 
+                                используется на самих grid элементах.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="code">grid-template-rows: 1fr 1fr 1fr</span> Выстраивает ряды в гриде. Каждое значение представляет 
+                        размер ряда. В этом случае все значения равны 1fr. Что такое fr можно почитать 
+                        <a href="http://webmaster.alexanderklimov.ru/pagemaker/grid/example2.php" target="_blank">ТУТ</a>. 
+                        Но конечно же, для этого можно было бы использовать разные значения, такие как 100px, 7em, 30% и так далее.
+                    </li>
+                    <li>
+                        <span class="code">grid-template-columns: 1fr 1fr 1fr</span> - тоже самое, что и выше, только определяет колонки в 
+                        гридах.
+                    </li>
+                    <li>
+                        <span class="code">grid-gap: 2vw</span> - Выставляет разрыв. То есть пробелы между грид элементами. Тут мы используем 
+                        vw единицу, которая относительна ширине viewport, но также мы можем использовать 10px, 1em и т. д.
+                        <ul>
+                            <li><span class="code">Grid-gap</span> свойство это сокращение для <span class="code">grid-row-gap</span> и 
+                                <span class="code">grid-column-gap</span> свойств.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Ну, а другая часть кода <span class="code">#grid > div {</span> просто назначает разные стили грид элементам.
+                    </li>
+                </ul>
+            </p>
+            <h5>Функция repeat()</h5>
+            <p>
+                Вы можете использовать функцию <span class="code">repeat()</span> для повторяющихся объявлений значения размера элемента. 
+                Для примера, вместо того, чтобы делать это:
+                <pre class="code">
+
+                    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                </pre>
+                Мы можем сделать так:
+                <pre class="code">
+
+                    grid-template-rows: repeat(5, 1fr);
+                </pre>
+                Что значительно сократит количество кода, которое вам нужно написать, особенно, если вы работаете с большими и часто 
+                повторяющимися элементами в гридах.
+            </p>
+            <h3 id="l20_p5">Создаем шаблон сайта с CSS Grid</h3>
+            <p>
+                Гриды включают в себя интуитивный «ASCII-графический» синтаксис, в котором вы можете виртуально «видеть» шаблон в коде, 
+                поэтому становится очень легко создавать и изменять сам шаблон. Даже значительные изменения могут быть сделаны за несколько 
+                секунд. Этот интуитивный синтаксис также помогает с адаптивным веб-дизайном. Создание разных шаблонов для разных устройств 
+                становится довольно пустяковым делом при использовании грид разметки.
+            </p>
+            <p>
+                Давайте теперь создадим шаблон сайта, который выглядит таким образом:
+            </p>
+            <img src="img/less20_img02.png" alt="site" class="rounded mx-auto d-block img-fluid">
+            <p>
+                А вот код этого шаблона (<a href="less_grid_tamplate.html" target="_blank">страница с шаблоном</a>):
+            </p>
+            <pre class="code">
+
+                -- HTML --
+                &lt;body>
+                    &lt;header id="pageHeader">Header&lt;/header>
+                    &lt;article id="mainArticle">Article&lt;/article>
+                    &lt;nav id="mainNav">Nav&lt;/nav>
+                    &lt;div id="siteAds">Ads&lt;/div>
+                    &lt;footer id="pageFooter">Footer&lt;/footer>
+                &lt;/body>
+
+                -- CSS --
+                body { 
+                    display: grid;
+                    grid-template-areas: 
+                        "header header header"
+                        "nav article ads"
+                        "footer footer footer";
+                    grid-template-rows: 60px 1fr 60px;
+                    grid-template-columns: 20% 1fr 15%;
+                    grid-gap: 10px;
+                    height: 100vh;
+                    margin: 0;
+                }
+                header, footer, article, nav, div {
+                    padding: 20px;
+                    background: gold;
+                }
+                #pageHeader {
+                    grid-area: header;
+                }
+                #pageFooter {
+                    grid-area: footer;
+                }
+                #mainArticle { 
+                    grid-area: article;      
+                }
+                #mainNav { 
+                    grid-area: nav; 
+                }
+                #siteAds { 
+                    grid-area: ads; 
+                }
+            </pre>
+            <h3 id="l20_p6">Создаем адаптивный Grid</h3>
+            <p>
+                В шаблоне созданном на гридах есть такие значения, как <span class="code">auto-fill и auto-fit</span>, которые позволяют 
+                вам создавать грид с множеством треков определенного размера, которые будут помещаться в указанном контейнере. Это говорит 
+                о том, что грид является адаптивным, то есть в нем элементы меняют свои позиции с тем, как вы меняете размер окна браузера.
+            </p>
+            <h5>Пример использования Auto-fill и Auto-fit:</h5>
+            <pre class="code">
+
+                -- HTML --
+                &lt;div class="grid auto-fill">
+                    &lt;div>1&lt;/div>
+                    &lt;div>2&lt;/div>
+                    &lt;div>3&lt;/div>
+                    &lt;div>4&lt;/div>
+                    &lt;div>5&lt;/div>
+                    &lt;div>6&lt;/div>
+                &lt;/div>
+                &lt;div class="grid auto-fit">
+                    &lt;div>1&lt;/div>
+                    &lt;div>2&lt;/div>
+                    &lt;div>3&lt;/div>
+                    &lt;div>4&lt;/div>
+                    &lt;div>5&lt;/div>
+                    &lt;div>6&lt;/div>
+                &lt;/div>
+
+                -- CSS --
+                .grid { 
+                    display: grid;
+                    grid-gap: 2vw;
+                    border: 1px solid black;
+                    margin: 10px;
+                }
+                .grid > div {
+                    font-size: 5vw;
+                    padding: .5em;
+                    background: gold;
+                    text-align: center;
+                }
+                .auto-fill {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                }
+                .auto-fit {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                }
+            </pre>
+            <p>
+                Посмотреть <a href="less_grid_adaptive.html">ТУТ</a>
+            </p>
+            <p>
+                Использование двух маленьких грид элементов тут поможет показать всю концепцию работы. Auto-fill оставляет пустые 
+                треки в конце по указанным размерам, а auto-fit растягивает пустой трек, что ведёт к заполнению треков растянутыми 
+                элементами для заполнения пространства.
+            </p>
+            <h3 id="l20_p7">Гриды с медиа запросами</h3>
+            <p>
+                Одной из сильных сторон гридов является то, что вы можете создать уже совершенно другой шаблон за секунды.
+            </p>
+            <p>
+                Это делает CSS Grid идеальным для медиа запросов. Мы можем просто переназначить значения в ASCII-графике и обернуть результат 
+                в конечный медиа запрос.
+            </p>
+            <pre class="code">
+
+                -- HTML --
+                &lt;body>
+                    &lt;header id="pageHeader">Header&lt;/header>
+                    &lt;article id="mainArticle">Article&lt;/article>
+                    &lt;nav id="mainNav">Nav&lt;/nav>
+                    &lt;div id="siteAds">Ads&lt;/div>
+                    &lt;footer id="pageFooter">Footer&lt;/footer>
+                &lt;/body>
+
+                -- CSS --
+                body { 
+                    display: grid;
+                    grid-template-areas: 
+                        "header header header"
+                        "nav article ads"
+                        "footer footer footer";
+                    grid-template-rows: 80px 1fr 70px;  
+                    grid-template-columns: 20% 1fr 15%;
+                    grid-row-gap: 10px;
+                    grid-column-gap: 10px;
+                    height: 100vh;
+                    margin: 0;
+                }  
+                  /* Stack the layout on small devices/viewports. */
+                @media all and (max-width: 575px) {
+                    body { 
+                        grid-template-areas: 
+                            "header"
+                            "article"
+                            "ads"
+                            "nav"
+                            "footer";
+                        grid-template-rows: 80px 1fr 70px 1fr 70px;  
+                        grid-template-columns: 1fr;
+                    }
+                }
+                header, footer, article, nav, div {
+                    padding: 1.2em;
+                    background: gold;
+                }
+                #pageHeader {
+                    grid-area: header;
+                }
+                #pageFooter {
+                    grid-area: footer;
+                }
+                #mainArticle { 
+                    grid-area: article;      
+                }
+                #mainNav { 
+                    grid-area: nav; 
+                }
+                #siteAds { 
+                    grid-area: ads; 
+                } 
+            </pre>
+            <p>
+                Посмотреть <a href="less_grid_media.html">ТУТ</a>
+            </p>
+            <p>
+                Это трехколоночный шаблон на большом viewport и он сжимается в одноколоночный на маленьких устройствах. Таким образом, 
+                этот пример будет выглядеть уже по-другому в зависимости от размера экрана.
+            </p>
+            <h3 id="l20_p8">Совмещаем grid c block</h3>
+            <p>
+                В зависимости от требований к вашему шаблону, нет ничего, что остановит вас изменить мобильную версию на display: block. 
+                Как тут:
+                <pre class="code">
+
+                    @media all and (max-width: 575px) {
+                        body { 
+                            display: block;
+                        }
+                    }
+                </pre>
+                Это будет работать также как и в примере выше, но по-дефолту, элементы встанут по своему исходному порядку. 
+                В примере выше, мобильная версия имеет nav под ads, но если бы мы использовали <span class="code">display: block</span>, 
+                то nav был бы выше ads.
+            </p>
+            <p>
+                Также используя этот метод вам также может понадобится добавление несколькоих внешних отступов для компенсации отсутствия 
+                разрывов, которые были включены в версию с гридами.
+            </p>
+            <h3 id="l20_p9">Auto-flow — строки или колонки</h3>
+            <p>
+                Пока что мы создавали только дополнительные строки, чтобы уложить дополнительные грид-элементы. Но что, если мы хотим 
+                использоваться дополнительные колонки?
+            </p>
+            <p>
+                Для этого у нас есть свойство <span class="code">grid-auto-flow</span>
+            </p>
+            <p>
+                Это свойство позволяет указывать, что нужно использовать для авто-размещения элементов, строки или колонки. 
+                Другими словами, вы можете указать как будет расти неявный грид — в виде строк или колонок. Изначальное значение 
+                тут — row, что объясняет то, почему на примере выше были добавлены дополнительные строки, вместо колонок. Но если 
+                вы предпочитаете использовать колонки, то вы можете использовать это:
+            </p>
+            <pre class="code">
+
+                grid-auto-flow: column;
+            </pre>
+            <p>
+                Вот что случится, если мы применим это к первому примеру.
+            </p>
+            <pre class="code">
+
+                -- HTML --
+                &lt;div id="grid">
+                    &lt;div>1&lt;/div>
+                    &lt;div>2&lt;/div>
+                    &lt;div>3&lt;/div>
+                    &lt;div>4&lt;/div>
+                    &lt;div>5&lt;/div>
+                    &lt;div>6&lt;/div>
+                &lt;/div>
+
+                -- CSS --
+                #grid { 
+                    display: grid;
+                    grid-template-rows: 80px 80px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 10px;
+                    grid-auto-flow: column;
+                }
+                #grid > div {
+                    padding: .5em;
+                    background: gold;
+                    text-align: center;
+                }
+            </pre>
+            <p>
+                Посмотреть <a href="less_grid_auto_flow.html">ТУТ</a>
+            </p>
+            <p>
+                Само собой, вы можете попробовать пойти дальше в этом примере и использовать <span class="code">grid-auto-columns</span> 
+                свойство, чтобы изменить ширину автоматически сгенерированной колонки. Так что если вы хотите, чтобы все колонки выше, 
+                были одинаковой ширины, вам надо использовать <span class="code">grid-auto-columns: 1fr;</span>.
+            </p>
+            <p>
+                Имейте ввиду, что выставляя <span class="code">column для grid-auto-flow</span> вы изменяете поток грид элементов. Вы уже могли заметить, что 
+                грид элементы в примере выше размещаются вдоль каждой колонки, вместо каждой строки.
+            </p>
+            <h3 id="l20_p10"></h3>
+        </div>
+    </div>
+    <footer style="min-height: 150px;"></footer>
+    <script src="../../../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</body>

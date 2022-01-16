@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_05</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson 5. Git.</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner_content">
+            <h3>Основы</h3>
+            <p>
+                Git — это набор консольных утилит, которые отслеживают и фиксируют изменения в файлах (чаще всего речь идет 
+                об исходном коде программ, но вы можете использовать его для любых файлов на ваш вкус). 
+                С его помощью вы можете откатиться на более старую версию вашего проекта, сравнивать, анализировать, 
+                сливать изменения и многое другое. Этот процесс называется контролем версий. Существуют различные системы для 
+                контроля версий. Вы, возможно, о них слышали: SVN, Mercurial, Perforce, CVS, Bitkeeper и другие.
+            </p>
+            <p>
+                Про Git в интернете огромное количество информации. Если вы в поиске сдалаете запрос "что такое Git" Вам выдаст 
+                пребольшой список информации (от Википедии до рукописных статей) из которого Вы можете выбрать на свой вкус. 
+                Вот примеры некоторых статей, которые могут помочь вам разобраться:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-Git%3F" target="_blank">Введение - Что такое Git?</a> 
+                </li>
+                <li>
+                    <a href="https://tproger.ru/translations/difference-between-git-and-github/" target="_blank">Git и GitHub: что это такое и в чём разница</a>
+                </li>
+                <li>
+                    <a href="https://habr.com/ru/post/541258/" target="_blank">Git для новичков (часть 1)</a>
+                </li>
+            </ul>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PEKN8NtBDQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+                <a href="https://learngitbranching.js.org/?locale=ru_RU">ТУТ</a> предложено обучение командам Git в игровой форме.
+            </p>
+            <h3>Установка</h3>
+            <p>Начальная установка и настройка показана в видео.</p>
+            <p>Windows — рекомендуется git for windows, так как он содержит и клиент с графическим интерфейсом, и эмулятор bash</p>
+            <a href="https://gitforwindows.org/" target="_blank">Git for Windows</a>
+
+            <h3>Использование</h3>
+            <ul>
+                <li>
+                    <span class="code">git clone https://github.com/s.....</span> - Клонировать репозиторий на локальный компьютер
+                </li>
+                <li>
+                    <span class="code">git pull</span> - Получить все изменения из репозитория
+                </li>
+                <li>
+                    <span class="code">git checkout -b branchname</span> - Создать новую ветку и переключится на нее
+                </li>
+                <li>
+                    <span class="code">git add .</span> - Добавить изменения, которые сделали локально
+                </li>
+                <li>
+                    <span class="code">git commit -m "commit text"</span> - Подписать изменения
+                </li>
+                <li>
+                    <span class="code">git push origin branch_name</span> - Закачать последний коммит на сервер
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</body>

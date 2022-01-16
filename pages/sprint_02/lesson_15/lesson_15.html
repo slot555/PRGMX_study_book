@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 15</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson 15: Media-queries.</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner_content">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lv47xClJolw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Что такое медиа-запросы</h3>
+            <p>
+                Медиа-запросы (media queries) – это правила CSS, которые позволяют управлять стилями элементов в зависимости от 
+                значений технических параметров устройств. Иными словами, это конструкции, которые позволяют определять на основании 
+                некоторых условий какие стили необходимо использовать на веб-странице, а какие нет.
+            </p>
+            <p>
+                Медиа-запросы появились в спецификации CSS3 и на сегодняшний день поддерживаются всеми современными браузерами 
+                (Chrome 4+, Firefox 3.5+, IE 9+, Opera 9+, Safari 4+).
+            </p>
+            <p>
+                Поддержка медиа-запросов в браузере IE8 осуществляется посредством подключения к странице скрипта «respond.js»:
+            </p>
+            <p>
+                Медиа-запросы предназначены для создания адаптивных дизайнов. Адаптивный дизайн отличается от других тем, что 
+                он может «приспосабливаться» (видоизменяться) в зависимости от того, какую ширину экрана имеет устройство (браузер).
+            </p>
+            <p>
+                Но при создании адаптивных веб-страниц также необходимо обратить внимание на метатег viewport. Данный тег обеспечивает 
+                корректное отображение адаптивных дизайнов сайтов на экранах устройств, имеющих высокую плотность пикселей. Иными 
+                словами, он устанавливает соответствие между CSS и физическим разрешением веб-страницы.
+            </p>
+            <p>
+                Подключение метатега viewport к странице осуществляется так:
+            </p>
+            <pre class="code">
+
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+            </pre>
+            <h3>Синтаксис</h3>
+            <p>
+                Создание медиа-запроса начинается с ключевого слова <span class="code">@media</span> после которого указывается одно 
+                или несколько условий. В качестве условия можно указывать тип устройства или требования к определённой характеристике. 
+                Требование к определённой характеристике записывается в круглых скобках.
+            </p>
+            <p>
+                Комбинирование нескольких условий выполняется с помощью логических операторов.
+            </p>
+            <p>
+                После составления <span class="code">@media</span>, стили, указанные в нём, будут применяться только в том случае, 
+                когда итоговый результат вычисления условий является истинной.
+            </p>
+            <p>
+                Пример медиа-запроса с одним условием:
+            </p>
+            <pre class="code">
+
+                @media screen {
+                    /* стили будут применяться, когда условие истинно */
+                }
+            </pre>
+            <p>
+                Пример медиа-запроса с комбинированием нескольких условий:
+            </p>
+            <pre class="code">
+
+                @media (min-width: 992px) and (max-width: 1199.98px) { ... }
+            </pre>
+            <h3>Типы устройств</h3>
+            <p>
+                В <span class="code">@media</span> можно указывать определённые типы устройств:
+                <ul>
+                    <li><span class="code">all</span> – для всех;</li>
+                    <li><span class="code">print</span> – для принтеров и в режиме предварительного просмотра страницы перед печатью;</li>
+                    <li><span class="code">screen</span> – для устройств с экранами;</li>
+                    <li><span class="code">speech</span> – для программ чтения с экрана.</li>
+                </ul>
+                Например, этот <span class="code">@media</span> только для экранов:
+            </p>
+            <pre class="code">
+
+                @media screen { ... }
+            </pre>
+            <p>
+                А здесь для экранов и принтеров:
+            </p>
+            <pre class="code">
+
+                @media screen, print { ... }
+            </pre>
+            <h3>Логические операторы</h3>
+            <p>
+                Логические операторы <span class="code">and, , (запятая), not и only</span> предназначены для 
+                создания сложных медиа-запросов.
+            </p>
+            <h4>and</h4>
+            <p>
+                Оператор <span class="code">and</span> используется для объединения нескольких условий. В этом случае их 
+                результат будет истинным, когда каждое из них будет истинным.
+            </p>
+            <p>
+                Например, следующий <span class="code">@media</span> будет применяться только при выполнении всех трёх условий 
+                (это экран, width >= 1200px и ориентация landscape):
+            </p>
+            <pre class="code">
+
+                @media screen and (min-width: 1200px) and (orientation: landscape) { ... }
+            </pre>
+            <h4>, (запятая)</h4>
+            <p>
+                Применение стилей, когда необходимо лишь выполнение одного из указанных условий, достигается посредством разделения 
+                их между собой с помощью , (запятой).
+            </p>
+            <p>
+                В этом примере стили будут применяться к странице в двух случаях. Когда width >= 544px или ориентация portrait.
+            </p>
+            <pre class="code">
+
+                @media (min-width: 544px), (orientation: portrait) { ... }
+            </pre>
+            <h4>not</h4>
+            <p>
+                Ключевое слово <span class="code">not</span> используется для отрицания.
+            </p>
+            <p>
+                При использовании <span class="code">not</span> с <span class="code">and</span> отрицание работает для всего медиа-запроса. 
+                При этом, когда указываем not необходимо обязательно задавать тип устройства.
+            </p>
+            <p>
+                Например, применим стили только в том случае, когда не (экран и width >= 411px и height >= 731px).
+            </p>
+            <pre class="code">
+
+                @media not screen and (min-width: 411px) and (min-height: 731px) { ... }
+            </pre>
+            <p>
+                При использовании <span class="code">not</span> в выражении с запятой он добавляет отрицание только для этой части.
+            </p>
+            <p>
+                Например, применим стили когда истинно следующее условие: не экран или не width >= 411px.
+            </p>
+            <pre class="code">
+
+                @media not screen, not (min-width: 411px) { ... }
+            </pre>
+            <h3>only</h3>
+            <p>
+                Ключевое слово <span class="code">only</span> предназначено для того, чтобы браузеры, которые не поддерживают 
+                CSS3 медиа-запросы их игнорировали. В настоящее время это уже не актуально, поэтому использовать 
+                <span class="code">only</span> не нужно.
+            </p>
+            <h3>Медиа-характеристики</h3>
+            <p>
+                При составлении условия кроме типов устройств и логических операторов можно ещё задавать требования к определённым 
+                характеристикам, которые должен иметь браузер, устройство вывода, или окружение. В некоторых источниках характеристики 
+                называют медиа-функциями.
+            </p>
+            <p>
+                Каждая характеристика в <span class="code">@media</span> должна быть заключена в круглые скобки.
+            </p>
+            <p>
+                При этом применяться стили указанные в @media будут также как раньше, т.е. только в том случае, когда результат 
+                вычисления всего выражения будет являться истиной.
+            </p>
+            <h4>idth</h4>
+            <p>
+                Медиа-характеристика <span class="code">width</span> позволяет задать условие на равенство ширины области просмотра 
+                определённому значению.
+            </p>
+            <p>
+                Например, применим CSS только для viewport с шириной 320px.
+            </p>
+            <pre class="code">
+
+                @media (width: 320px) { ... }
+            </pre>
+            <p>
+                Для определения диапазона можно использовать <span class="code">min-width и max-width.</span>
+            </p>
+            <p>
+                Например, @media для ширины viewport от 576px до 1200px:
+            </p>
+            <pre class="code">
+
+                @media (min-width: 576px) and (max-width: 1199.98px) { ... }
+            </pre>
+            <p>
+                Для ширины больше 768px:
+            </p>
+            <pre class="code">
+
+                @media (min-width: 768px) { ... }
+            </pre>
+            <p>
+                Если нужно меньше 1400px:
+            </p>
+            <pre class="code">
+
+                @media (max-width: 1399.98px) { ... }
+            </pre>
+            <h3>height</h3>
+            <p>
+                Для задания условий в отношении высоты viewport можно использовать <span class="code">height, min-height и max-height.</span>
+            </p>
+            <p>
+                Например, @media для высоты viewport больше 720px:
+            </p>
+            <pre class="code">
+                
+                @media (min-height: 720px) { ... }
+            </pre>
+            <h3>orientation</h3>
+            <p>
+                С помощью orientation можно установить те или иные стили в зависимости от того, в каком режиме (альбомном или портретном) отображается сайт.
+            </p>
+            <p>
+                Например, в зависимости от ориентации viewport будем отображать разные картинки:
+            </p>
+            <pre class="code">
+                
+                @media (orientation: landscape) {
+                    .cover { background: url(bg-l.png) no-repeat; }
+                }
+
+                @media (orientation: portrait) {
+                    .cover { background: url(bg-p.png) no-repeat; }
+                }
+            </pre>
+            <h3>aspect-ratio</h3>
+            <p>
+                Характеристики aspect-ration, min-aspect-ratio и max-aspect-ratio позволяют задавать стили в зависимости от соотношения сторон viewport.
+            </p>
+            <pre class="code">
+
+                /* Minimum aspect ratio */
+                @media (min-aspect-ratio: 9/16) {
+                    .header {
+                        background-color: #0dcaf0;
+                    }
+                }
+
+                /* Maximum aspect ratio */
+                @media (max-aspect-ratio: 16/9) {
+                    .header {
+                        background: #ffc107;
+                    }
+                }
+
+                /* Exact aspect ratio */
+                @media (aspect-ratio: 1/1) {
+                    .header {
+                        background: #6c757d;
+                    }
+                }
+            </pre>
+            <h3>resolution</h3>
+            <p>
+                Характеристики resolution, min-resolution и max-resolution можно использовать, когда нужно задать стили в зависимости от плотности пикселей устройства.
+            </p>
+            <p>
+                Например, установим другой размер шрифта для устройств с плотностью пикселей на дюйм более 150:
+            </p>
+            <pre class="code">
+
+                /* Default */
+                p {
+                    font-size: 16px;
+                }
+
+                /* Minimum resolution */
+                @media (min-resolution: 150dpi) {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            </pre>
+            <p>
+                Стили для печати страницы с плотностью пикселей больше 300dpi:
+            </p>
+            <pre class="code">
+                
+                @media print and (min-resolution: 300dpi) { ... }
+            </pre>
+        </div>
+    </div>
+</body>

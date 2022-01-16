@@ -1,0 +1,114 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@font-face {
+    font-family: "Montserrat"; 
+    src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "Hack"; 
+    src: url("../fonts/Hack-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+.header_menu ul {
+    display: -webkit-flex; 
+    display: flex;
+    background: #dff1e9;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    font-family: 'Hack';
+    font-size: 16px;
+    font-weight: normal;
+}
+.header_menu a {
+    padding: 1em;
+    display: block;
+    color: #070707;
+    border-right: 1px solid #030303;
+    background: rgba(150, 149, 147, 0.3);
+}
+.header_menu a:hover {
+    background: #87caa1
+}
+body{
+    background-color: rgb(245, 246, 246);
+    color: rgb(19, 18, 18);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: rgb(35, 160, 118);
+}
+a:hover{
+    color: rgb(39, 95, 76);
+}
+.header{
+    padding: 20px;
+}    
+.header-inner{
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.back_btn{
+    position: absolute;
+    display: block;
+    top: 45px;
+    left: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    transition: .3s;
+    border-radius: 5px;
+}
+.back_btn:hover{
+    box-shadow: 4px 6px 25px #d0d0d0;
+}
+.content{
+    width: 100%;
+    margin-bottom: 200px;
+}
+.inner_content{
+    width: 1200px;
+    margin: 10px auto;
+}
+p{
+    text-indent: 20px;
+    text-align: justify;
+}
+.code{
+    font-family: 'Hack';
+    font-size: 16px;
+    font-weight: bold;
+}
+.code_row{
+    width: 100%;
+    display: flex;
+}
+.code_row div{
+    border: 1px solid black;
+    padding: 10px;
+}
+.code_col, .rez_col{
+    width: 50%;
+}
+.move_up_arrow{
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    background-image: url(../img/move_up.png);
+    background-size: cover;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    transition: 0.3s;
+}
+.move_up_arrow:hover{
+    width: 6vw;
+    height: 6vw;
+    transition: 0.3s;
+}

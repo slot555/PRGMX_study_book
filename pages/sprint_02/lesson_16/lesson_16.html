@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 2. Lesson 16</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+</head>
+<body>
+    <div id="lesson_menu"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1>Lesson 16: Dropdown menu.</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner_content">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/W3jyDHrU0wY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Реализация выпадающего меня с помощью HTML и CSS.</h3>
+            <p>
+                CSS становится все более мощным, и с помощью таких функций, как CSS-сетка и пользовательские свойства 
+                (также называемые переменные CSS), мы можем реализовать многие действительно креативные решения. 
+                Некоторые из этих решений имеют своей целью не только сделать Интернет красивее, но и сделать его более доступным, 
+                и улучшить опыт создания доступных стилей.
+            </p>
+            <p>
+                Общий шаблон пользовательского интерфейса, который мы видим в Интернете, — это выпадающие меню. 
+                Они используются для более детального отображения связанной информации, не нагромождая большого количества кнопок, 
+                текста и параметров. Чаще всего они используются для областей заголовка и навигации сайта.
+            </p>
+            <p>
+                Давайте посмотрим, можем ли мы создать одно из этих меню с помощью только CSS. Мы создадим список ссылок внутри 
+                компонента навигации следующим образом например:
+            </p>
+            <pre class="code">
+
+                &lt;nav role="navigation">
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">One&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Two&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Three&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/nav>
+            </pre>
+            <p>
+                Теперь, предположим, мы хотим создать выпадающее подменю во втором элементе навигации. Мы можем сделать 
+                то же самое и включить список ссылок в этом элементе списка:
+            </p>
+            <pre class="code">
+
+                &lt;nav role="navigation">
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">One&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Two&lt;/a>
+                            &lt;ul class="dropdown">
+                                &lt;li>&lt;a href="#">Sub-1&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="#">Sub-2&lt;/a>&lt;/li>
+                                &lt;li>&lt;a href="#">Sub-3&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/li>
+                        &lt;li>&lt;a href="#">Three&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/nav>
+            </pre>
+            <p>
+                Теперь у нас есть двухуровневая система навигации. Чтобы содержимое было скрыто и отображалось, когда мы хотим, 
+                нам нужно применить некоторый CSS. Все свойства стилей для ясности взаимодействия были удалены из следующего примера:
+            </p>
+            <p>
+                Теперь выпадающее подменю скрыто, но будет отображаться, когда мы наводим курсор мыши на связанный родительский 
+                элемент в панели навигации. Определив стили для ul li ul мы обеспечили доступ к этому подменю, а через стили 
+                ul li ul li у нас есть доступ к отдельным элементам списка в нем.
+            </p>
+            <pre class="code">
+
+                a {
+                    text-decoration: none;
+                }
+                  
+                nav {
+                    font-family: monospace;
+                }
+                  
+                ul {
+                    background: darkorange;
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 0;
+                }
+                  
+                li {
+                    color: #fff;
+                    background: darkorange;
+                    display: block;
+                    float: left;
+                    padding: 1rem;
+                    position: relative;
+                    text-decoration: none;
+                    transition-duration: 0.5s;
+                }
+                    
+                li a {
+                    color: #fff;
+                }
+                  
+                li:hover {
+                    background: red;
+                    cursor: pointer;
+                }
+                  
+                ul li ul {
+                    background: orange;
+                    visibility: hidden;
+                    opacity: 0;
+                    min-width: 5rem;
+                    position: absolute;
+                    transition: all 0.5s ease;
+                    margin-top: 1rem;
+                    left: 0;
+                    display: none;
+                }
+                  
+                ul li:hover > ul,
+                ul li ul:hover {
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                }
+                  
+                ul li ul li {
+                    clear: both;
+                    width: 100%;
+                }
+            </pre>
+            <nav role="navigation" class="example_menu">
+                <ul>
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Sub-1</a></li>
+                            <li><a href="#">Sub-2</a></li>
+                            <li><a href="#">Sub-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Three</a></li>
+                </ul>
+            </nav>
+            
+            
+        </div>
+    </div>
+</body>
