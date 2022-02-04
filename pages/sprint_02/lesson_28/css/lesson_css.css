@@ -1,0 +1,21 @@
+pre{
+    background-color: rgb(178, 215, 216);
+}
+#less20_examle01{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+}
+#less20_examle01 > div {
+    font-size: 5vw;
+    padding: .5em;
+    background: gold;
+    text-align: center;
+}
+.img-fluid{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
