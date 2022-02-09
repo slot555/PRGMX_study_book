@@ -4,7 +4,7 @@ window.addEventListener("load", function(event) {
         '<nav class="header_menu">',
             '<ul>',
                 '<li><a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>',
-                '<li><a href="pages/task/sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
+                '<li><a href="pages/task/sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
                 '<li><a href="students_works.html"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Student projects</a></li>',
             '</ul>',
         '</nav>'
@@ -18,7 +18,7 @@ window.addEventListener("load", function(event) {
         '<nav class="header_menu">',
             '<ul>',
                 '<li><a href="../../../index.html"><i class="fa fa-home fa-fw"></i>Home</a></li>',
-                '<li><a href="../../task/sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
+                '<li><a href="../../task/sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
                 '<li><a href="../../../students_works.html"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Student projects</a></li>',
             '</ul>',
         '</nav>',
@@ -31,7 +31,7 @@ window.addEventListener("load", function(event) {
         '<nav class="header_menu">',
             '<ul>',
                 '<li><a href="../../../../index.html"><i class="fa fa-home fa-fw"></i>Home</a></li>',
-                '<li><a href="../../sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
+                '<li><a href="../../sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a></li>',
                 '<li><a href="../../../../students_works.html"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Student projects</a></li>',
             '</ul>',
         '</nav>',
@@ -78,13 +78,13 @@ window.addEventListener("load", function(event) {
     ];
 
     var index_menu_example = [
-        '<a class="nav-link" href="pages/task/sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
+        '<a class="nav-link" href="pages/task/sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
     ];
     var lesson_menu_example = [
-        '<a class="nav-link" href="../../task/sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
+        '<a class="nav-link" href="../../task/sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
     ];
     var task_menu_example = [
-        '<a class="nav-link" href="../../sprint_02/lesson_21/lesson_21_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
+        '<a class="nav-link" href="../../sprint_03/lesson_30/lesson_30_menu.html"><i class="fa fa-code fa-fw"></i>&nbsp;Last vesion example project</a>'
     ];
 
     var index_menu_students = [
