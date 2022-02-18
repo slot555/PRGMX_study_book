@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 3. Lesson 33</title>
+    
+    <link rel="stylesheet" href="../../../bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script defer src="../../../fontawesome-free-5.15.4-web/js/brands.js"></script>
+    <script defer src="../../../fontawesome-free-5.15.4-web/js/solid.js"></script>
+    <script defer src="../../../fontawesome-free-5.15.4-web/js/fontawesome.js"></script>
+    <script type="text/javascript" src="../../../js/menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages_style.css">
+    <link rel="stylesheet" type="text/css" href="css/lesson_css.css">
+</head>
+<body>
+    <div id="lesson_menu_bootsrap"></div>
+    <div class="header">
+        <div class="header-inner">
+            <h1 id="l32_p0">Lesson 33: JS. Functions.</h1>
+        </div>
+    </div>
+    <a href="#l32_p0" class="move_up_arrow"></a>
+    <div class="container">
+        <div class="inner_content">
+            <h4>Содержание:</h4>
+            <ul>
+                <li><a href="#l33_p1">33.1. Понятие «функции»</a></li>
+                <ul>
+                    <li><a href="#l33_p1_1">33.1.1. Объявление функции</a></li>
+                    <li><a href="#l33_p1_2">33.1.2. Локальные переменные</a></li>
+                    <li><a href="#l33_p1_3">33.1.3. Внешние переменные</a></li>
+                    <li><a href="#l33_p1_4">33.1.4. Параметры</a></li>
+                    <li><a href="#l33_p1_5">33.1.5. Параметры по умолчанию</a></li>
+                    <li><a href="#l33_p1_6">33.1.6. Возврат значения</a></li>
+                    <li><a href="#l33_p1_7">33.1.7. Выбор имени функции</a></li>
+                    <li><a href="#l33_p1_8">33.1.8. Функции == Комментарии</a></li>
+                </ul>
+                <li><a href="#l33_p2">33.2. Вступление в DOM-модель и DOM-дерево</a></li>
+                <ul>
+                    <li><a href="#l33_p2_1">33.2.1. Пример DOM</a></li>
+                    <li><a href="#l33_p2_2">33.2.2. Автоисправление</a></li>
+                </ul>
+                <li><a href="#l33_p3">33.3. getElement(by Id, by ClassName, by TagName), innerHTML</a></li>
+                <ul>
+                    <li><a href="#l33_p3_1">33.3.1. document.getElementById()</a></li>
+                    <li><a href="#l33_p3_2">33.3.2. document.getElementsByClassName()</a></li>
+                    <li><a href="#l33_p3_3">33.3.3. document.getElementsByTagName()</a></li>
+                    <li><a href="#l33_p3_4">33.3.4. element.innerHTML</a></li>
+                </ul>
+                <li><a href="#l33_p4">33.4. Навигация по DOM-элементам</a></li>
+                <ul>
+                    <li><a href="#l33_p4_1">33.4.1. documentElement и body</a></li>
+                    <li><a href="#l33_p4_2">33.4.2. Дети: childNodes, firstChild, lastChild</a></li>
+                    <li><a href="#l33_p4_3">33.4.3. DOM-коллекции</a></li>
+                    <li><a href="#l33_p4_4">33.4.4. Соседи и родитель</a></li>
+                </ul>
+                <li><a href="#l33_p5">33.5. querySelector, querySelectorAll, addEventListener, onClick</a></li>
+                <ul>
+                    <li><a href="#l33_p5_1">33.5.1. querySelector</a></li>
+                </ul>
+            </ul>
+
+
+            
+            задачи на функции решаем тут: http://dkab.github.io/jasmine-tests/
+            https://learn.javascript.ru/function-basics
+            
+
+            вступление в ДОМ-модель и DOM-дерево
+            getElement(by Id, by ClassName, by TagName), innerHTML
+
+            ДОМ & БОМ
+            примеры ДОМ и навигация по элементам 
+            querySelector, addEventListener, onClick
+
+            3 способа задания функций
+            render(), insertAdjacentHTML()
+
+            <hr>
+            <h3 id="l33_p1">33.1. Понятие «функции»</h3>
+            <p>
+                Зачастую нам надо повторять одно и то же действие во многих частях программы. Например, необходимо красиво вывести сообщение при 
+                приветствии посетителя, при выходе посетителя с сайта, ещё где-нибудь. Чтобы не повторять один и тот же код во многих местах, 
+                придуманы функции. Функции являются основными «строительными блоками» программы.
+            </p>
+            <p>
+                Примеры встроенных функций вы уже видели – это <span class="code"> alert(message), prompt(message, default) и confirm(question)</span>. 
+                Но можно создавать и свои.
+            </p>
+            <hr>
+            <h4 id="l33_p1_1">33.1.1. Объявление функции</h4>
+            <p>
+                Для создания функций мы можем использовать объявление функции. <br>
+                Пример объявления функции:
+                <pre class="code">
+
+        function showMessage() {
+            alert( 'Всем привет!' );
+        }
+                </pre>
+                Вначале идёт ключевое слово <b>function</b>, после него имя функции, затем список параметров в круглых скобках через запятую 
+                (в вышеприведённом примере он пустой) и, наконец, код функции, также называемый «телом функции», внутри фигурных скобок.
+                <pre class="code">
+
+        function имя(параметры) {
+            ...тело...
+        }
+                </pre>
+                Наша новая функция может быть вызвана по её имени: showMessage(). <br>
+                Например:
+                <pre class="code">
+
+        function showMessage() {
+            alert( 'Всем привет!' );
+        }
+        
+        showMessage();
+        showMessage();
+                </pre>
+                Вызов <b>showMessage()</b> выполняет код функции. Здесь мы увидим сообщение дважды. <br>
+                Этот пример явно демонстрирует одно из главных предназначений функций: избавление от дублирования кода. <br>
+                Если понадобится поменять сообщение или способ его вывода – достаточно изменить его в одном месте: в функции, которая его выводит.
+            </p>
+            <hr>
+            <h4 id="l33_p1_2">33.1.2. Локальные переменные</h4>
+            <p>
+                Переменные, объявленные внутри функции, видны только внутри этой функции. <br>
+                Например:
+                <pre class="code">
+
+        function showMessage() {
+            let message = "Привет, я JavaScript!"; // локальная переменная
+            
+            alert( message );
+        }
+        
+        showMessage(); // Привет, я JavaScript!
+        alert( message ); // будет ошибка, т.к. переменная видна только внутри функции
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p1_3">33.1.3. Внешние переменные</h4>
+            <p>
+                У функции есть доступ к внешним переменным, например:
+                <pre class="code">
+
+        let userName = 'Вася';
+
+        function showMessage() {
+        let message = 'Привет, ' + userName;
+        alert(message);
+        }
+
+        showMessage(); // Привет, Вася
+                </pre>
+                Функция обладает полным доступом к внешним переменным и может изменять их значение. <br>
+                Например:
+                <pre class="code">
+
+        let userName = 'Вася';
+
+        function showMessage() {
+            userName = "Петя"; // (1) изменяем значение внешней переменной
+        
+            let message = 'Привет, ' + userName;
+            alert(message);
+        }
+        
+        alert( userName ); // Вася перед вызовом функции
+        
+        showMessage();
+        
+        alert( userName ); // Петя, значение внешней переменной было изменено функцией
+                </pre>
+                Внешняя переменная используется, только если внутри функции нет такой локальной. <br>
+                Если одноимённая переменная объявляется внутри функции, тогда она перекрывает внешнюю. Например, в коде ниже 
+                функция использует локальную переменную userName. Внешняя будет проигнорирована:
+                <pre class="code">
+
+        let userName = 'Вася';
+
+        function showMessage() {
+            let userName = "Петя"; // объявляем локальную переменную
+
+            let message = 'Привет, ' + userName; // Петя
+            alert(message);
+        }
+
+        // функция создаст и будет использовать свою собственную локальную переменную userName
+        showMessage();
+
+        alert( userName ); // Вася, не изменилась, функция не трогала внешнюю переменную
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p1_3">33.1.4. Параметры</h4>
+            <p>
+                Мы можем передать внутрь функции любую информацию, используя параметры (также называемые аргументами функции). <br>
+                В нижеприведённом примере функции передаются два параметра: from и text.
+                <pre class="code">
+
+        function showMessage(from, text) { // аргументы: from, text
+            alert(from + ': ' + text);
+        }
+        
+        showMessage('Аня', 'Привет!'); // Аня: Привет! (*)
+        showMessage('Аня', "Как дела?"); // Аня: Как дела? (**)
+                </pre>
+                Когда функция вызывается в строках (*) и (**), переданные значения копируются в локальные переменные from и text. 
+                Затем они используются в теле функции. <br>
+                Вот ещё один пример: у нас есть переменная from, и мы передаём её функции. Обратите внимание: функция изменяет значение 
+                from, но это изменение не видно снаружи. Функция всегда получает только копию значения:
+                <pre class="code">
+
+        function showMessage(from, text) {
+
+            from = '*' + from + '*'; // немного украсим "from"
+    
+            alert( from + ': ' + text );
+        }
+    
+        let from = "Аня";
+    
+        showMessage(from, "Привет"); // *Аня*: Привет
+    
+        // значение "from" осталось прежним, функция изменила значение локальной переменной
+        alert( from ); // Аня
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p1_5">33.1.5. Параметры по умолчанию</h4>
+            <p>
+                Если параметр не указан, то его значением становится <b>undefined.</b> <br>
+                Например, вышеупомянутая функция <b>showMessage(from, text)</b> может быть вызвана с одним аргументом:
+                <pre class="code">
+
+        showMessage("Аня");
+                </pre>
+                Это не приведёт к ошибке. Такой вызов выведет "Аня: undefined". В вызове не указан параметр text, поэтому предполагается, 
+                что text === undefined. <br>
+                Если мы хотим задать параметру text значение по умолчанию, мы должны указать его после =:
+                <pre class="code">
+
+        function showMessage(from, text = "текст не добавлен") {
+            alert( from + ": " + text );
+        }
+            
+        showMessage("Аня"); // Аня: текст не добавлен
+                </pre>
+                Теперь, если параметр text не указан, его значением будет "текст не добавлен" <br>
+                В данном случае "текст не добавлен" это строка, но на её месте могло бы быть и более сложное выражение, 
+                которое бы вычислялось и присваивалось при отсутствии параметра. Например:
+                <pre class="code">
+
+        function showMessage(from, text = anotherFunction()) {
+            // anotherFunction() выполнится только если не передан text
+            // результатом будет значение text
+        }
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p1_6">33.1.6. Возврат значения</h4>
+            <p>
+                Функция может вернуть результат, который будет передан в вызвавший её код. <br>
+                Простейшим примером может служить функция сложения двух чисел:
+                <pre class="code">
+                    
+        function sum(a, b) {
+            return a + b;
+        }
+            
+        let result = sum(1, 2);
+        alert( result ); // 3
+                </pre>
+                Директива return может находиться в любом месте тела функции. Как только выполнение доходит до этого места, 
+                функция останавливается, и значение возвращается в вызвавший её код (присваивается переменной result выше). <br>
+                Вызовов return может быть несколько, например:
+                <pre class="code">
+
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                return confirm('А родители разрешили?');
+            }
+        }
+
+        let age = prompt('Сколько вам лет?', 18);
+
+        if ( checkAge(age) ) {
+            alert( 'Доступ получен' );
+        } else {
+            alert( 'Доступ закрыт' );
+        }
+                </pre>
+                Возможно использовать return и без значения. Это приведёт к немедленному выходу из функции. <br>
+                Например:
+                <pre class="code">
+
+        function showMovie(age) {
+            if ( !checkAge(age) ) {
+                return;
+            }
+
+            alert( "Вам показывается кино" ); // (*)
+            // ...
+        }
+                </pre>
+                В коде выше, если checkAge(age) вернёт false, showMovie не выполнит alert. <br>
+            </p>
+            <p>
+                <span class="danger">Результат функции с пустым return или без него – undefined</span> <br>
+                Если функция не возвращает значения, это всё равно, как если бы она возвращала undefined:
+                <pre class="code">
+
+        function doNothing() { /* пусто */ }
+
+        alert( doNothing() === undefined ); // true
+                </pre>
+                Пустой return аналогичен return undefined:
+                <pre class="code">
+
+        function doNothing() {
+            return;
+        }
+
+        alert( doNothing() === undefined ); // true
+                </pre>
+            </p>
+            <p>
+                <span class="danger">Никогда не добавляйте перевод строки между return и его значением</span> <br>
+                Для длинного выражения в return может быть заманчиво разместить его на нескольких отдельных строках, например так:
+                <pre class="code">
+
+        return
+        (some + long + expression + or + whatever * f(a) + f(b))
+                </pre>
+                Код не выполнится, потому что интерпретатор JavaScript подставит точку с запятой после return. Для него это будет выглядеть так:
+                <pre class="code">
+
+        return;
+        (some + long + expression + or + whatever * f(a) + f(b))
+                </pre>
+                Таким образом, это фактически стало пустым return. <br>
+                Если мы хотим, чтобы возвращаемое выражение занимало несколько строк, нужно начать его на той же строке, что и return. 
+                Или, хотя бы, поставить там открывающую скобку, вот так:
+                <pre class="code">
+
+        return (
+            some + long + expression
+            + or +
+            whatever * f(a) + f(b)
+        )
+                </pre>
+                И тогда всё сработает, как задумано.
+            </p>
+            <hr>
+            <h4 id="l33_p1_7">33.1.7. Выбор имени функции</h4>
+            <p>
+                Функция – это действие. Поэтому имя функции обычно является глаголом. Оно должно быть простым, точным и 
+                описывать действие функции, чтобы программист, который будет читать код, получил верное представление о том, 
+                что делает функция. <br>
+                Как правило, используются глагольные префиксы, обозначающие общий характер действия, после которых следует уточнение. 
+                Обычно в командах разработчиков действуют соглашения, касающиеся значений этих префиксов. <br>
+                Например, функции, начинающиеся с "show" обычно что-то показывают.
+                <ul>Функции, начинающиеся с…
+                    <li>"show…" – что-то показывают,</li>
+                    <li>"get…" – возвращают значение,</li>
+                    <li>"calc…" – что-то вычисляют,</li>
+                    <li>"create…" – что-то создают,</li>
+                    <li>"check…" – что-то проверяют и возвращают логическое значение, и т.д.</li>
+                </ul>
+                Примеры таких имён:
+                <pre class="code">
+
+        showMessage(..)     // показывает сообщение
+        getAge(..)          // возвращает возраст (в каком-либо значении)
+        calcSum(..)         // вычисляет сумму и возвращает результат
+        createForm(..)      // создаёт форму (и обычно возвращает её)
+        checkPermission(..) // проверяет доступ, возвращая true/false
+                </pre>
+                Благодаря префиксам, при первом взгляде на имя функции становится понятным что делает её код, и какое значение она может возвращать.
+            </p>
+            <p>
+                <span class="danger">Одна функция – одно действие</span> <br>
+                Функция должна делать только то, что явно подразумевается её названием. И это должно быть одним действием. <br>
+                Два независимых действия обычно подразумевают две функции, даже если предполагается, что они будут вызываться 
+                вместе (в этом случае мы можем создать третью функцию, которая будет их вызывать).
+                <ul>Несколько примеров, которые нарушают это правило:
+                    <li>getAge – будет плохим выбором, если функция будет выводить alert с возрастом (должна только возвращать его).</li>
+                    <li>createForm – будет плохим выбором, если функция будет изменять документ, добавляя форму в него (должна только 
+                        создавать форму и возвращать её).</li>
+                    <li>checkPermission – будет плохим выбором, если функция будет отображать сообщение с текстом доступ разрешён/запрещён 
+                        (должна только выполнять проверку и возвращать её результат).</li>
+                </ul>
+                В этих примерах использовались общепринятые смыслы префиксов. Конечно, вы в команде можете договориться о других значениях, 
+                но обычно они мало отличаются от общепринятых. В любом случае вы и ваша команда должны точно понимать, что значит префикс, 
+                что функция с ним может делать, а чего не может.
+            </p>
+            <p>
+                <span class="danger">Сверхкороткие имена функций</span> <br>
+                Имена функций, которые используются очень часто, иногда делают сверхкороткими. <br>
+                Например, во фреймворке jQuery есть функция с именем <b>$</b>. В библиотеке Lodash основная функция представлена именем <b>_</b>. <br>
+                Это исключения. В основном имена функций должны быть в меру краткими и описательными.
+            </p>
+            <hr>
+            <h4 id="l33_p1_8">33.1.8. Функции == Комментарии</h4>
+            <p>
+                Функции должны быть короткими и делать только что-то одно. Если это что-то большое, имеет смысл разбить функцию на несколько меньших. 
+                Иногда следовать этому правилу непросто, но это определённо хорошее правило. <br>
+                Небольшие функции не только облегчают тестирование и отладку – само существование таких функций выполняет роль хороших комментариев!
+            </p>
+            <hr>
+            <h3 id="l33_p2">33.2. Вступление в DOM-модель и DOM-дерево</h3>
+            <p>
+                Основой HTML-документа являются теги. <br>
+                В соответствии с объектной моделью документа («Document Object Model», коротко DOM), каждый HTML-тег является объектом. 
+                Вложенные теги являются «детьми» родительского элемента. Текст, который находится внутри тега, также является объектом. <br>
+                Все эти объекты доступны при помощи JavaScript, мы можем использовать их для изменения страницы. <br>
+                Например, document.body – объект для тега <b>&lt;body></b>. <br>
+                Если запустить этот код, то <b>&lt;body></b> станет красным на 3 секунды:
+                <pre class="code">
+
+        document.body.style.background = 'red'; // сделать фон красным
+
+        setTimeout(() => document.body.style.background = '', 3000); // вернуть назад
+                </pre>
+                Это был лишь небольшой пример того, что может DOM.
+            </p>
+            <hr>
+            <h4 id="l33_p2_1">33.2.1 Пример DOM</h4>
+            <p>
+                Начнём с такого, простого, документа:
+                <pre class="code">
+
+        &lt;!DOCTYPE HTML>
+        &lt;html>
+        &lt;head>
+            &lt;title>О лосях&lt;/title>
+        &lt;/head>
+        &lt;body>
+            Правда о лосях.
+        &lt;/body>
+        &lt;/html>
+                </pre>
+                DOM – это представление HTML-документа в виде дерева тегов. Вот как оно выглядит:
+                <img src="img/l33_p2_img01.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+                Пробелы и переводы строки – это полноправные символы, как буквы и цифры. Они образуют текстовые узлы и становятся 
+                частью дерева DOM. Так, в примере выше в теге <b>&lt;head></b> есть несколько пробелов перед <b>&lt;title></b>, которые 
+                образуют текстовый узел #text (он содержит в себе только перенос строки и несколько пробелов). <br>
+                Когда мы работаем с деревом DOM, используя инструменты разработчика в браузере (которые мы рассмотрим позже), пробелы в 
+                начале/конце текста и пустые текстовые узлы (переносы строк) между тегами обычно не отображаются. <br>
+                Таким образом инструменты разработки экономят место на экране.
+                <img src="img/l33_p2_img02.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+            </p>
+            <hr>
+            <h4 id="l33_p2_2">33.2.2 Автоисправление</h4>
+            <p>
+                Если браузер сталкивается с некорректно написанным HTML-кодом, он автоматически корректирует его при построении DOM. <br>
+                Например, в начале документа всегда должен быть тег <b>&lt;html></b>. Даже если его нет в документе – он будет в дереве DOM, 
+                браузер его создаст. То же самое касается и тега <b>&lt;body>.</b> <br>
+                Например, если HTML-файл состоит из единственного слова "Привет", браузер обернёт его в теги &lt;html> и &lt;body>, 
+                добавит необходимый тег &lt;head>, и DOM будет выглядеть так:
+                <img src="img/l33_p2_img03.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+            </p>
+            <hr>
+            <h3 id="l33_p3">33.3. getElement(by Id, by ClassName, by TagName), innerHTML</h3>
+            <h4 id="l33_p3_1">33.3.1. document.getElementById()</h4>
+            <p>
+                Возвращает ссылку на элемент по его идентификатору (ID); <br>
+                идентификатор является строкой, которая может быть использована для идентификации элемента;<br> 
+                она может быть определена при помощи атрибута id в HTML или из скрипта. <br>
+                <b>Синтаксис</b>
+                <pre class="code">
+
+        element = document.getElementById(id);
+                </pre>
+                <b>Параметры:</b><br>
+                <b>id</b> - чувствительная к регистру строка, являющаяся уникальным идентификатором искомого элемента. <br>
+                <b>Возвращаемое значение</b><br>
+                ссылка на объект типа Element соответствующий указанному ID или null, если элемент с указанным ID не найден в документе. <br>
+                <b>Пример</b><br>
+                <pre class="code">
+
+        &lt;!DOCTYPE html>
+        &lt;html>
+        &lt;head>
+            &lt;title>getElementById example&lt;/title>
+            &lt;script>
+                function changeColor(newColor) {
+                    var elem = document.getElementById("para1");
+                    elem.style.color = newColor;
+                }
+            &lt;/script>
+        &lt;/head>
+        &lt;body>
+            &lt;p id="para1">Some text here&lt;/p>
+            &lt;button onclick="changeColor('blue');">blue&lt;/button>
+            &lt;button onclick="changeColor('red');">red&lt;/button>
+        &lt;/body>
+        &lt;/html>
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p3_2">33.3.2. document.getElementsByClassName()</h4>
+            <p>
+                Возвращает массивоподобный (итерируемый) объект всех дочерних элементов, соответствующих всем из указанных 
+                имён классов. В случае вызова по отношению к объекту 'document', поиск происходит по всему документу, включая 
+                корневой элемент. Вызывать getElementsByClassName() можно также применительно к любому элементу: возвращены будут 
+                лишь те элементы, которые являются потомками указанного корневого элемента и имеют при этом указанные классы. <br>
+                <b>Синтаксис</b> <br>
+                <pre class="code">
+
+        var elements = document.getElementsByClassName(names); // или:
+        var elements = rootElement.getElementsByClassName(names);
+                </pre>
+                <ul>
+                    <li>В "elements" будет текущая  HTMLCollection найденных элементов.</li>
+                    <li>"names" - строка, состоящая из списка имён искомых классов; имена классов разделяют пробелами.</li>
+                    <li>getElementsByClassName может быть вызвана по отношению к любому элементу, не только для документа целиком. 
+                        ("document"). Элемент, по отношению к которому осуществляется вызов, используется для целей поиска в качестве корневого элемента.</li>
+                </ul>
+                <b>Примеры</b><br>
+                Получить все элементы класса 'test':
+                <pre class="code">
+
+        document.getElementsByClassName('test');
+                </pre>
+                Получить все элементы, для которых заданы класс 'red' и класс 'test':
+                <pre class="code">
+        
+        document.getElementsByClassName('red test');
+                </pre>
+                Получить все элементы класса 'test', являющиеся дочерними для элемента с ID 'main':
+                <pre class="code">
+
+        document.getElementById('main').getElementsByClassName('test');
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p3_3">33.3.3. document.getElementsByTagName()</h4>
+            <p>
+                Element.getElementsByTagName() метод возвращает живую коллекцию элементов HTMLCollection, учитывая имя тэга. 
+                Поиск осуществляется в поддереве указанного элемента, в результат поиска не попадает сам элемент, в поддереве 
+                которого осуществлялся поиск. Возвращает живой список, который автоматически обновляется при изменении DOM. Поэтому 
+                не нужно вызывать метод Element.getElementsByTagName() несколько раз с одними и теми же аргументами, содержимое списка 
+                обновляется автоматически. <br>
+                <b>Синтаксис</b>
+                <pre class="code">
+
+        elements = element.getElementsByTagName(tagName);
+                </pre>
+                <b>Пример</b>
+                <pre class="code">
+
+        // check the alignment on a number of cells in a table.
+        var table = document.getElementById("forecast-table");
+        var cells = table.getElementsByTagName("td");
+        for (var i = 0; i &lt; cells.length; i++) {
+            var status = cells[i].getAttribute("data-status");
+            if ( status == "open" ) {
+                // grab the data
+            }
+        }
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p3_4">33.3.4. element.innerHTML</h4>
+            <p>
+                Свойство интерфейса Element innerHTML устанавливает или получает HTML или XML разметку дочерних элементов. <br>
+                <b>Синтаксис</b><br>
+                Этот пример использует innerHTML для создания механизма логирования сообщений внутри элемента на странице.
+                <pre class="code">
+
+        const content = element.innerHTML;
+        element.innerHTML = htmlString;
+                </pre>
+                <b>Пример</b>
+                <pre class="code">
+
+        function log(msg) {
+            var logElem = document.querySelector(".log");
+            
+            var time = new Date();
+            var timeStr = time.toLocaleTimeString();
+            logElem.innerHTML += timeStr + ": " + msg + "&nbbr/>";
+        }
+            
+        log("Регистрация событий мыши внутри этого контейнера...");
+
+        function logEvent(event) {
+            var msg = "Event &lt;strong>" + event.type + "&lt;/strong> at &lt;em>" +
+                event.clientX + ", " + event.clientY + "&lt;/em>";
+            log(msg);
+        }
+
+        var boxElem = document.querySelector(".box");
+
+        boxElem.addEventListener("mousedown", logEvent);
+        boxElem.addEventListener("mouseup", logEvent);
+        boxElem.addEventListener("click", logEvent);
+        boxElem.addEventListener("mouseenter", logEvent);
+        boxElem.addEventListener("mouseleave", logEvent);
+                </pre>
+            </p>
+            <hr>
+            <h3 id="l33_p4">33.4. Навигация по DOM-элементам</h3>
+            <p>
+                DOM позволяет нам делать что угодно с элементами и их содержимым, но для начала нужно получить соответствующий DOM-объект. <br>
+                Все операции с DOM начинаются с объекта document. Это главная «точка входа» в DOM. Из него мы можем получить доступ к любому узлу. <br>
+                Так выглядят основные ссылки, по которым можно переходить между узлами DOM:
+                <img src="img/l33_p4_img01.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+            </p>
+            <hr>
+            <h4 id="l33_p4_1">33.4.1. documentElement и body</h4>
+            <p>
+                Самые верхние элементы дерева доступны как свойства объекта document: <br>
+                <b>&lt;html></b> = document.documentElement <br>
+                Самый верхний узел документа: document.documentElement. В DOM он соответствует тегу <b>&lt;html></b>. <br>
+                <b>&lt;body></b> = document.body <br>
+                Другой часто используемый DOM-узел – узел тега <b>&lt;body>: document.body.</b> <br>
+                <b>&lt;head></b> = document.head <br>
+                Тег &lt;head> доступен как document.head. <br><br>
+                <span class="danger"><i class="fas fa-exclamation-triangle"></i> Есть одна тонкость: <b>document.body</b> может быть равен null</span> <br>
+                Нельзя получить доступ к элементу, которого ещё не существует в момент выполнения скрипта. <br>
+                В частности, если скрипт находится в <span class="code">&lt;head>, document.body</span> в нём недоступен, потому что браузер 
+                его ещё не прочитал. <br>
+                Поэтому, в примере ниже первый alert выведет null:
+                <pre class="code">
+        &lt;html>
+
+        &lt;head>
+        &lt;script>
+            alert( "Из HEAD: " + document.body ); // null, &lt;body> ещё нет
+        &lt;/script>
+        &lt;/head>
+
+        &lt;body>
+
+        &lt;script>
+            alert( "Из BODY: " + document.body ); // HTMLBodyElement, теперь он есть
+        &lt;/script>
+
+        &lt;/body>
+        &lt;/html>
+                </pre>
+                <span class="info"><i class="fas fa-exclamation-circle"></i> В мире <span class="code">DOM null</span> означает «не существует»</span> <br>
+                В DOM значение null значит «не существует» или «нет такого узла».
+            </p>
+            <hr>
+            <h4 id="l33_p4_2">33.4.2. Дети: childNodes, firstChild, lastChild</h4>
+            <p>
+                Здесь и далее мы будем использовать два принципиально разных термина:
+                <ul>
+                    <li>
+                        Дочерние узлы (или дети) – элементы, которые являются непосредственными детьми узла. Другими словами, 
+                        элементы, которые лежат непосредственно внутри данного. Например, &lt;head> и &lt;body> являются детьми элемента &lt;html>.
+                    </li>
+                    <li>
+                        Потомки – все элементы, которые лежат внутри данного, включая детей, их детей и т.д.
+                    </li>
+                </ul>
+                В примере ниже детьми тега &lt;body> являются теги &lt;div> и &lt;ul> (и несколько пустых текстовых узлов):
+                <pre class="code">
+
+        &lt;html>
+        &lt;body>
+        &lt;div>Начало&lt;/div>
+
+        &lt;ul>
+            &lt;li>
+                &lt;b>Информация&lt;/b>
+            &lt;/li>
+        &lt;/ul>
+        &lt;/body>
+        &lt;/html>
+                </pre>
+                …А потомки &lt;body>– это и прямые дети &lt;div>, &lt;ul> и вложенные в них: &lt;li> (потомок &lt;ul>) и &lt;b> (потомок &lt;li>) 
+                – в общем, все элементы поддерева. 
+                <br><br>
+                <span class="code">Коллекция <b>childNodes</b> содержит список всех детей, включая текстовые узлы.</span> <br>
+                Пример ниже последовательно выведет детей document.body:
+                <pre class="code">
+
+        &lt;html>
+        &lt;body>
+            &lt;div>Начало&lt;/div>
+
+            &lt;ul>
+                &lt;li>Информация&lt;/li>
+            &lt;/ul>
+
+            &lt;div>Конец&lt;/div>
+
+            &lt;script>
+                for (let i = 0; i < document.body.childNodes.length; i++) {
+                    alert( document.body.childNodes[i] ); // Text, DIV, Text, UL, ..., SCRIPT
+                }
+            &lt;/script>
+            ...какой-то HTML-код...
+        &lt;/body>
+        &lt;/html>
+                </pre>
+                <span class="info"><i class="fas fa-exclamation-circle"></i></span>
+                Обратим внимание на маленькую деталь. Если запустить пример выше, то последним будет выведен элемент <b>&lt;script></b>. На самом деле, 
+                в документе есть ещё «какой-то HTML-код», но на момент выполнения скрипта браузер ещё до него не дошёл, поэтому скрипт не видит его.
+                <br><br>
+                <span class="code">Свойства firstChild и lastChild обеспечивают быстрый доступ к первому и последнему дочернему элементу.</span> <br>
+                Они, по сути, являются всего лишь сокращениями. Если у тега есть дочерние узлы, условие ниже всегда верно: 
+                <pre class="code">
+
+        elem.childNodes[0] === elem.firstChild
+        elem.childNodes[elem.childNodes.length - 1] === elem.lastChild
+                </pre>
+                Для проверки наличия дочерних узлов существует также специальная функция <span class="code">elem.hasChildNodes()</span>
+            </p>
+            <hr>
+            <h4 id="l33_p4_3">33.4.3. DOM-коллекции</h4>
+            <p>
+                Как мы уже видели, childNodes похож на массив. На самом деле это не массив, а коллекция – особый перебираемый объект-псевдомассив. <br>
+                И есть два важных следствия из этого:
+                <ol>
+                    <li>
+                        Для перебора коллекции мы можем использовать for..of:
+                        <pre class="code">
+
+                            for (let node of document.body.childNodes) {
+                                alert(node); // покажет все узлы из коллекции
+                            }
+                        </pre>
+                        Это работает, потому что коллекция является перебираемым объектом (есть требуемый для этого метод Symbol.iterator).
+                    </li>
+                    <li>
+                        Методы массивов не будут работать, потому что коллекция – это не массив:
+                        <pre class="code">
+
+                            alert(document.body.childNodes.filter); // undefined (у коллекции нет метода filter!)
+                        </pre>
+                    </li>
+                </ol>
+                Первый пункт – это хорошо для нас. <br> 
+                Второй – бывает неудобен, но можно пережить. <br>
+                Если нам хочется использовать именно методы массива, то мы можем создать настоящий массив из коллекции, используя Array.from:
+                <pre class="code">
+
+                    alert( Array.from(document.body.childNodes).filter ); // сделали массив
+                </pre>
+
+                <span class="danger"><i class="fas fa-exclamation-triangle"></i> DOM-коллекции – только для чтения</span> <br>
+                DOM-коллекции, и даже более – все навигационные свойства, перечисленные в этой главе, доступны только для чтения. <br>
+                Мы не можем заменить один дочерний узел на другой, просто написав childNodes[i] = ....  <br>
+                Для изменения DOM требуются другие методы. 
+                <br><br>
+                <span class="danger"><i class="fas fa-exclamation-triangle"></i> DOM-коллекции живые</span> <br>
+                Почти все DOM-коллекции, за небольшим исключением, живые. Другими словами, они отражают текущее состояние DOM. <br>
+                Если мы сохраним ссылку на elem.childNodes и добавим/удалим узлы в DOM, то они появятся в сохранённой коллекции автоматически.
+                <br><br>
+                <span class="danger"><i class="fas fa-exclamation-triangle"></i> Не используйте цикл for..in для перебора коллекций</span> <br>
+                Коллекции перебираются циклом <b>for..of</b>. Некоторые начинающие разработчики пытаются использовать для этого цикл <b>for..in</b>. <br>
+                Не делайте так. Цикл <b>for..in</b> перебирает все перечисляемые свойства. А у коллекций есть некоторые «лишние», редко используемые 
+                свойства, которые обычно нам не нужны:
+                <pre class="code">
+
+        &lt;body>
+            &lt;script>
+                // выводит 0, 1, length, item, values и другие свойства.
+                for (let prop in document.body.childNodes) alert(prop);
+            &lt;/script>
+        &lt;/body>
+                </pre>
+                <hr>
+                <h4 id="l33_p4_4">33.4.4. Соседи и родитель</h4>
+                <p>
+                    Соседи – это узлы, у которых один и тот же родитель. <br>
+                    Например, здесь &lt;head> и &lt;body> соседи:
+                    <pre class="code">
+
+        &lt;html>
+            &lt;head>...&lt;/head>&lt;body>...&lt;/body>
+        &lt;/html>
+                    </pre>
+                    <ul>
+                        <li>говорят, что &lt;body> – «следующий» или «правый» сосед &lt;head>&lt;/head></li>
+                        <li>также можно сказать, что &lt;head> «предыдущий» или «левый» сосед &lt;body>&lt;/body></li>
+                    </ul>
+                    Следующий узел того же родителя (следующий сосед) – в свойстве nextSibling, а предыдущий – в previousSibling. <br>
+                    Родитель доступен через parentNode. <br>
+                    Например:
+                    <pre class="code">
+
+        // родителем &lt;body> является &lt;html>
+        alert( document.body.parentNode === document.documentElement ); // выведет true
+        
+        // после &lt;head> идёт &lt;body>
+        alert( document.head.nextSibling ); // HTMLBodyElement
+        
+        // перед &lt;body> находится &lt;head>
+        alert( document.body.previousSibling ); // HTMLHeadElement
+                    </pre>
+                </p>
+                <hr>
+                <h4 id="l33_p4_5">33.4.5. Навигация только по элементам</h4>
+                <p>
+                    Навигационные свойства, описанные выше, относятся ко всем узлам в документе. В частности, в childNodes находятся и текстовые 
+                    узлы и узлы-элементы и узлы-комментарии, если они есть. <br>
+                    Но для большинства задач текстовые узлы и узлы-комментарии нам не нужны. Мы хотим манипулировать узлами-элементами, 
+                    которые представляют собой теги и формируют структуру страницы. <br>
+                    Поэтому давайте рассмотрим дополнительный набор ссылок, которые учитывают только узлы-элементы:
+                    <img src="img/l33_p4_img02.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+                    Эти ссылки похожи на те, что раньше, только в ряде мест стоит слово Element:
+                    <ul>
+                        <li>children – коллекция детей, которые являются элементами.</li>
+                        <li>firstElementChild, lastElementChild – первый и последний дочерний элемент.</li>
+                        <li>previousElementSibling, nextElementSibling – соседи-элементы.</li>
+                        <li>parentElement – родитель-элемент.</li>
+                    </ul>
+                    <span class="info"><i class="fas fa-exclamation-circle"></i>Зачем нужен parentElement? Разве может родитель быть не элементом?</span>
+                    Свойство parentElement возвращает родитель-элемент, а parentNode возвращает «любого родителя». Обычно эти свойства одинаковы: 
+                    они оба получают родителя. <br>
+                    За исключением document.documentElement:
+                    <pre class="code">
+
+        alert( document.documentElement.parentNode ); // выведет document
+        alert( document.documentElement.parentElement ); // выведет null
+                    </pre>
+                    Причина в том, что родителем корневого узла document.documentElement (&lt;html>) является document. Но document – 
+                    это не узел-элемент, так что parentNode вернёт его, а parentElement нет. <br>
+                    Эта деталь может быть полезна, если мы хотим пройти вверх по цепочке родителей от произвольного элемента elem к &lt;html>, 
+                    но не до document:
+                    <pre class="code">
+
+        while(elem = elem.parentElement) { // идти наверх до <html>
+            alert( elem );
+        }
+                    </pre>
+                </p>
+                <hr>
+                <h3 id="l33_p5">33.5. querySelector, querySelectorAll, addEventListener, onClick</h3>
+                <h4 id="l33_p5_1">33.5.1. querySelector</h4>
+                <p>
+                    Document метод <b>querySelector()</b> возвращает первый элемент (Element) документа, который соответствует 
+                    указанному селектору или группе селекторов. Если совпадений не найдено, возвращает значение null. <br>
+                    <span class="code">Синтаксис</span>
+                    <pre class="code">
+
+        element = document.querySelector(selectors);
+                    </pre>
+                </p>
+                
+                
+                
+
+
+            </p>
+
+            
+
+            
+
+
+
+        
+            
+
+
+
+            
+
+            
+            
+
+
+
+            
+
+
+
+            
+            
+        </div>
+    </div>
+    <footer style="min-height: 150px;"></footer>
+    <script src="../../../bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</body>
