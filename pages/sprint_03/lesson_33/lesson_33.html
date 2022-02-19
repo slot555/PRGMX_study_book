@@ -59,25 +59,11 @@
                 <li><a href="#l33_p5">33.5. querySelector, querySelectorAll, addEventListener, onClick</a></li>
                 <ul>
                     <li><a href="#l33_p5_1">33.5.1. querySelector</a></li>
+                    <li><a href="#l33_p5_2">33.5.2. querySelectorAll</a></li>
+                    <li><a href="#l33_p5_3">33.5.3. addEventListener</a></li>
+                    <li><a href="#l33_p5_4">33.5.4. onClick</a></li>
                 </ul>
             </ul>
-
-
-            
-            задачи на функции решаем тут: http://dkab.github.io/jasmine-tests/
-            https://learn.javascript.ru/function-basics
-            
-
-            вступление в ДОМ-модель и DOM-дерево
-            getElement(by Id, by ClassName, by TagName), innerHTML
-
-            ДОМ & БОМ
-            примеры ДОМ и навигация по элементам 
-            querySelector, addEventListener, onClick
-
-            3 способа задания функций
-            render(), insertAdjacentHTML()
-
             <hr>
             <h3 id="l33_p1">33.1. Понятие «функции»</h3>
             <p>
@@ -770,25 +756,26 @@
             &lt;/script>
         &lt;/body>
                 </pre>
-                <hr>
-                <h4 id="l33_p4_4">33.4.4. Соседи и родитель</h4>
-                <p>
-                    Соседи – это узлы, у которых один и тот же родитель. <br>
-                    Например, здесь &lt;head> и &lt;body> соседи:
-                    <pre class="code">
+            </p>
+            <hr>
+            <h4 id="l33_p4_4">33.4.4. Соседи и родитель</h4>
+            <p>
+                Соседи – это узлы, у которых один и тот же родитель. <br>
+                Например, здесь &lt;head> и &lt;body> соседи:
+                <pre class="code">
 
         &lt;html>
             &lt;head>...&lt;/head>&lt;body>...&lt;/body>
         &lt;/html>
-                    </pre>
-                    <ul>
-                        <li>говорят, что &lt;body> – «следующий» или «правый» сосед &lt;head>&lt;/head></li>
-                        <li>также можно сказать, что &lt;head> «предыдущий» или «левый» сосед &lt;body>&lt;/body></li>
-                    </ul>
-                    Следующий узел того же родителя (следующий сосед) – в свойстве nextSibling, а предыдущий – в previousSibling. <br>
-                    Родитель доступен через parentNode. <br>
-                    Например:
-                    <pre class="code">
+                </pre>
+                <ul>
+                    <li>говорят, что &lt;body> – «следующий» или «правый» сосед &lt;head>&lt;/head></li>
+                    <li>также можно сказать, что &lt;head> «предыдущий» или «левый» сосед &lt;body>&lt;/body></li>
+                </ul>
+                Следующий узел того же родителя (следующий сосед) – в свойстве nextSibling, а предыдущий – в previousSibling. <br>
+                Родитель доступен через parentNode. <br>
+                Например:
+                <pre class="code">
 
         // родителем &lt;body> является &lt;html>
         alert( document.body.parentNode === document.documentElement ); // выведет true
@@ -798,87 +785,170 @@
         
         // перед &lt;body> находится &lt;head>
         alert( document.body.previousSibling ); // HTMLHeadElement
-                    </pre>
-                </p>
-                <hr>
-                <h4 id="l33_p4_5">33.4.5. Навигация только по элементам</h4>
-                <p>
-                    Навигационные свойства, описанные выше, относятся ко всем узлам в документе. В частности, в childNodes находятся и текстовые 
-                    узлы и узлы-элементы и узлы-комментарии, если они есть. <br>
-                    Но для большинства задач текстовые узлы и узлы-комментарии нам не нужны. Мы хотим манипулировать узлами-элементами, 
-                    которые представляют собой теги и формируют структуру страницы. <br>
-                    Поэтому давайте рассмотрим дополнительный набор ссылок, которые учитывают только узлы-элементы:
-                    <img src="img/l33_p4_img02.png" class="img-fluid rounded mx-auto d-block" alt="js access">
-                    Эти ссылки похожи на те, что раньше, только в ряде мест стоит слово Element:
-                    <ul>
-                        <li>children – коллекция детей, которые являются элементами.</li>
-                        <li>firstElementChild, lastElementChild – первый и последний дочерний элемент.</li>
-                        <li>previousElementSibling, nextElementSibling – соседи-элементы.</li>
-                        <li>parentElement – родитель-элемент.</li>
-                    </ul>
-                    <span class="info"><i class="fas fa-exclamation-circle"></i>Зачем нужен parentElement? Разве может родитель быть не элементом?</span>
-                    Свойство parentElement возвращает родитель-элемент, а parentNode возвращает «любого родителя». Обычно эти свойства одинаковы: 
-                    они оба получают родителя. <br>
-                    За исключением document.documentElement:
-                    <pre class="code">
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p4_5">33.4.5. Навигация только по элементам</h4>
+            <p>
+                Навигационные свойства, описанные выше, относятся ко всем узлам в документе. В частности, в childNodes находятся и текстовые 
+                узлы и узлы-элементы и узлы-комментарии, если они есть. <br>
+                Но для большинства задач текстовые узлы и узлы-комментарии нам не нужны. Мы хотим манипулировать узлами-элементами, 
+                которые представляют собой теги и формируют структуру страницы. <br>
+                Поэтому давайте рассмотрим дополнительный набор ссылок, которые учитывают только узлы-элементы:
+                <img src="img/l33_p4_img02.png" class="img-fluid rounded mx-auto d-block" alt="js access">
+                Эти ссылки похожи на те, что раньше, только в ряде мест стоит слово Element:
+                <ul>
+                    <li>children – коллекция детей, которые являются элементами.</li>
+                    <li>firstElementChild, lastElementChild – первый и последний дочерний элемент.</li>
+                    <li>previousElementSibling, nextElementSibling – соседи-элементы.</li>
+                    <li>parentElement – родитель-элемент.</li>
+                </ul>
+                <span class="info"><i class="fas fa-exclamation-circle"></i>Зачем нужен parentElement? Разве может родитель быть не элементом?</span>
+                Свойство parentElement возвращает родитель-элемент, а parentNode возвращает «любого родителя». Обычно эти свойства одинаковы: 
+                они оба получают родителя. <br>
+                За исключением document.documentElement:
+                <pre class="code">
 
         alert( document.documentElement.parentNode ); // выведет document
         alert( document.documentElement.parentElement ); // выведет null
-                    </pre>
-                    Причина в том, что родителем корневого узла document.documentElement (&lt;html>) является document. Но document – 
-                    это не узел-элемент, так что parentNode вернёт его, а parentElement нет. <br>
-                    Эта деталь может быть полезна, если мы хотим пройти вверх по цепочке родителей от произвольного элемента elem к &lt;html>, 
-                    но не до document:
-                    <pre class="code">
+                </pre>
+                Причина в том, что родителем корневого узла document.documentElement (&lt;html>) является document. Но document – 
+                это не узел-элемент, так что parentNode вернёт его, а parentElement нет. <br>
+                Эта деталь может быть полезна, если мы хотим пройти вверх по цепочке родителей от произвольного элемента elem к &lt;html>, 
+                но не до document:
+                <pre class="code">
 
         while(elem = elem.parentElement) { // идти наверх до <html>
             alert( elem );
         }
-                    </pre>
-                </p>
-                <hr>
-                <h3 id="l33_p5">33.5. querySelector, querySelectorAll, addEventListener, onClick</h3>
-                <h4 id="l33_p5_1">33.5.1. querySelector</h4>
-                <p>
-                    Document метод <b>querySelector()</b> возвращает первый элемент (Element) документа, который соответствует 
-                    указанному селектору или группе селекторов. Если совпадений не найдено, возвращает значение null. <br>
-                    <span class="code">Синтаксис</span>
-                    <pre class="code">
+                </pre>
+            </p>
+            <hr>
+            <h3 id="l33_p5">33.5. querySelector, querySelectorAll, addEventListener, onClick</h3>
+            <h4 id="l33_p5_1">33.5.1. querySelector</h4>
+            <p>
+                Document метод <b>querySelector()</b> возвращает первый элемент (Element) документа, который соответствует 
+                указанному селектору или группе селекторов. Если совпадений не найдено, возвращает значение null. <br>
+                <span class="code">Синтаксис</span>
+                <pre class="code">
 
         element = document.querySelector(selectors);
-                    </pre>
-                </p>
-                
-                
-                
+                </pre>
+                <b>селекторы</b> <br>
+                DOMString, содержащий один или более селекторов для сопоставления. Эта строка должна быть допустимой строкой селектора CSS; если же нет, 
+                генерируется исключение SYNTAX_ERR. Смотрите Расположение элементов DOM с использованием селекторов для того, чтобы узнать больше о 
+                селекторах и о том, как ими управлять. <br>
+                <b>Примеры</b>
+                <pre class="code">
 
-
+        var el_1 = document.querySelector(".myclass");
+        var el_2 = document.querySelector("#uniqueID");
+                </pre>
             </p>
+            <hr>
+            <h4 id="l33_p5_2">33.5.2. querySelectorAll</h4>
+            <p>
+                Метод querySelectorAll() Document возвращает статический (не динамический) NodeList, содержащий все найденные элементы документа, 
+                которые соответствуют указанному селектору. <br>
+                <b>Синтаксис</b>
+                <pre class="code">
 
+        var elementList = document.querySelectorAll(selectors);
+                </pre>
+                <b>Возвращаемое значение</b><br>
+                Статический (non-live) NodeList, содержащий все элементы в пределах документа, которые соответствуют как минимум одному из указанных 
+                селекторов, или пустой NodeList в случае отсутствия совпадений. 
+                <br><br>
+                <b>Примеры</b> <br>
+                Чтобы получить NodeList всех элементов <p> в документе:
+                <pre class="code">
+
+        var matches = document.querySelectorAll("p");                        
+                </pre>
+                В этом примере возвращается список всех элементов &lt;div> в документе, которые имеют класс note или alert:
+                <pre class="code">
+
+        var matches = document.querySelectorAll("div.note, div.alert");
+                </pre>
+                Этот пример возвращает список всех элементов с тегом p, которые находятся непосредственно в элементах-контейнерах 
+                с тегом div, имеющих класс 'highlighted', которые в свою очередь находятся внутри элемента с идентификатором 'test':
+                <pre class="code">
+
+        var el = document.querySelector('#test');
+        var matches = el.querySelectorAll('div.highlighted > p');
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p5_3">33.5.3. addEventListener</h4>
+            <p>
+                Метод EventTarget.addEventListener() регистрирует определённый обработчик события, вызванного на EventTarget. 
+                <br><br>
+                <b>Синтаксис</b>
+                <pre class="code">
+
+        target.addEventListener(type, listener[, options]);
+                </pre>
+                <b>Параметры</b> <br>
+                <ul>
+                    <li>type - Чувствительная к регистру строка, представляющая тип обрабатываемого события.</li>
+                    <li>listener - Объект, который принимает уведомление, когда событие указанного типа произошло. Это должен быть объект, реализующий 
+                        интерфейс EventListener или просто функция JavaScript.</li>
+                    <li>options(Необязательный) - Объект options, который определяет характеристики объекта, прослушивающего событие. Доступно несколько вариантов.</li>
+                </ul>
+                <b>Пример</b>
+                <pre class="code">
+
+        //HTML Содержимое
+        &lt;table id="outside">
+            &lt;tr>&lt;td id="t1">один&lt;/td>&lt;/tr>
+            &lt;tr>&lt;td id="t2">два&lt;/td>&lt;/tr>
+        &lt;/table>
+
+        //JavaScript Содержимое
+        // Функция изменяет содержимое t2
+        function modifyText() {
+            var t2 = document.getElementById("t2");
+            if (t2.firstChild.nodeValue == "три") {
+                t2.firstChild.nodeValue = "два";
+            } else {
+                t2.firstChild.nodeValue = "три";
+            }
+        }
+
+        // Добавляет обработчика событий для таблицы
+        var el = document.getElementById("outside");
+        el.addEventListener("click", modifyText, false);
+                </pre>
+            </p>
+            <hr>
+            <h4 id="l33_p5_4">33.5.4. onClick</h4>
+            <p>
+                Событие – это сигнал от браузера о том, что что-то произошло. Все DOM-узлы подают такие сигналы (хотя события бывают и не только в DOM). <br>
+                Вот список самых часто используемых DOM-событий, пока просто для ознакомления:
+                <ul>События мыши:
+                    <li>click – происходит, когда кликнули на элемент левой кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).</li>
+                    <li>contextmenu – происходит, когда кликнули на элемент правой кнопкой мыши.</li>
+                    <li>mouseover / mouseout – когда мышь наводится на / покидает элемент.</li>
+                    <li>mousedown / mouseup – когда нажали / отжали кнопку мыши на элементе.</li>
+                    <li>mousemove – при движении мыши.</li>
+                </ul>
+                <b>Пример</b>
+                <pre class="code">
+
+        elem.onclick = function() {
+            alert('Спасибо');
+        };
+                </pre>
+                Синтаксис добавления обработчика:
+                <pre class="code">
+
+        function handler() {
+            alert( 'Спасибо!' );
+        }
             
-
-            
-
-
-
-        
-            
-
-
-
-            
-
-            
-            
-
-
-
-            
-
-
-
-            
-            
+        input.addEventListener("click", handler);
+                </pre>
+            </p>
         </div>
     </div>
     <footer style="min-height: 150px;"></footer>
